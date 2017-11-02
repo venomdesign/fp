@@ -1,0 +1,199 @@
+<!-- <app-header></app-header> -->
+<!-- <header>
+  <div *ngIf="auth.isAuthenticated()" class="user-profile" style="float: right;">
+    <div class="monogram">XX</div>
+    <div class="user-menu">
+      <a class="pointer" routerLink="/profile">{{profile?.nickname}}</a>
+      <a class="pointer" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp;Logout</a>
+      <a><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;Settings</a>
+    </div>
+  </div>
+  <div *ngIf="auth.isAuthenticated()" class="alert-notification" style="float: right;">
+    <div class="alert-icon">
+      <i class="fa fa-bell-o fa-2x fa-inverse" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="hamburger" onclick="slideMenuOpen(menuState);" *ngIf="auth.isAuthenticated()">
+    <div class="hamburger-icon">
+      <i id="faHamburgerIcon" class="fa fa-bars fa-2x fa-inverse"></i>
+    </div>
+  </div>
+  <div class="corporateBranding">
+    <div class="corporate-mark"><a routerLink="/" class="pointer">EasyPay</a></div>
+  </div>
+  <ng2-slim-loading-bar [height]="'2px'" [color]="'lime'" class="clearfix"></ng2-slim-loading-bar>
+</header> -->
+<!-- Navigation Bar-->
+
+<!-- <div class="wrapper">
+  <div class="container-fluid">
+
+    <div *ngIf="auth.isAuthenticated()" id="menuContainer" class="menu-container">
+      <div id="fullSideMenu" class="full-side-menu" style="display: none;">
+        <ul class="full-menu">
+          <li routerLinkActive='active'><a routerLink='home'><i class="fa fa-home fa-2x fa-inverse fa-fw" aria-hidden="true"></i>&nbsp;Home</a></li>
+          <li routerLinkActive='active'><a routerLink='profile'><i class="fa fa-user-o fa-2x fa-inverse fa-fw"></i>&nbsp;Profile</a></li>
+        </ul>
+      </div>
+      <div id="iconSideMenu" class="icon-side-menu">
+        <ul class="iconMenu">
+          <li id="homeIcon" routerLinkActive='active'><a routerLink='home'><i class="fa fa-home fa-2x fa-inverse fa-fw" aria-hidden="true"></i></a></li>
+          <li id="profileIcon" routerLinkActive='active'><a routerLink='profile'><i class="fa fa-user-o fa-2x fa-inverse fa-fw"></i></a></li>
+          <li routerLinkActive='active'><a routerLink='login' title="Login"><i class="fa fa-arrow-circle-right fa-2x fa-inverse fa-fw"></i></a></li>
+          <li routerLinkActive='active'><a routerLink='register' title="Registration"><i class="fa fa-book fa-2x fa-inverse fa-fw"></i></a></li>
+          <li routerLinkActive='active'><a routerLink='password' title="Password"><i class="fa fa-lock fa-2x fa-inverse fa-fw"></i></a></li>
+        </ul>
+      </div>
+      <div class="pz-logo">
+        <img src="assets/fnf_logo_trans.fw.png" alt="Fidelity National Financial" style="max-width: 45px;" /><br />&copy; 2017
+        <script>new Date().getFullYear() > 2017 && document.write("-" + new Date().getFullYear());</script>
+      </div>
+    </div>
+    <div id="contentContainer" class="content-wrapper fullHeight">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <div *ngIf="auth.isAuthenticated(); else infoText" style="margin-top: 10px;">
+              <router-outlet></router-outlet>
+            </div>
+            <ng-template #infoText>
+              <div>
+                <h3>Please login...</h3>
+                <button class="btn btn-primary" (click)="auth.login()">Login</button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> --> <!-- end container -->
+<!-- </div> -->
+<!-- end wrapper -->
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container-fluid">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <!-- Text Logo -->
+                        <a href="index.html" class="logo">
+                            <span class="logo-small"><i class="mdi mdi-radar"></i></span>
+                            <span class="logo-large"><i class="mdi mdi-radar"></i> EasyPay</span>
+                        </a>
+                        <!-- Image Logo -->
+                        <!--<a href="index.html" class="logo">-->
+                        <!--<img src="assets/images/logo_dark.png" alt="" height="24" class="logo-lg">-->
+                        <!--<img src="assets/images/logo_sm.png" alt="" height="24" class="logo-sm">-->
+                        <!--</a>-->
+
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras topbar-custom">
+
+                        <ul class="list-inline float-right mb-0" style="float:right">
+
+                            <li class="menu-item list-inline-item">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+                          
+                            <li class="list-inline-item dropdown notification-list" *ngIf="auth.isAuthenticated()">
+                                <a class="nav-link dropdown-toggle waves-effect nav-user" data-toggle="dropdown" href="index.html#" role="button"
+                                   aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="text-overflow"><small class="text-white">Welcome ! {{profile?.nickname}}</small> </h5>
+                                    </div>
+                                    <!-- item-->
+                                    <a  [routerLink]="['/profile']" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-star-variant"></i> <span>Profile</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-settings"></i> <span>Settings</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
+                                    </a>
+                                    <!-- item-->
+                                    <a *ngIf="auth.isAuthenticated()" (click)="auth.logout()" class="dropdown-item notify-item">
+                                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> <span>Logout</span>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- end menu-extras -->
+
+                    <div class="clearfix"></div>
+
+                </div> <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+            <div class="navbar-custom" *ngIf="auth.isAuthenticated()">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu"><a [routerLink]="['/']"><i class="ti-home"></i>Home</a></li>
+                            
+                            <li class="has-submenu"><a [routerLink]="['/login']"><!-- <i class="ti-home"></i> -->Login</a></li>
+                            
+                            <li class="has-submenu"><a [routerLink]="['/register']"><!-- <i class="ti-home"></i> -->Register</a></li>
+
+                            <li class="has-submenu"><a [routerLink]="['/password']"><!-- <i class="ti-paint-bucket"></i> -->Password</a></li>
+
+                            <li class="has-submenu"><a [routerLink]="['/invoice']"><!-- <i class="ti-light-bulb"></i> -->Invoices</a></li>
+
+                            <li class="has-submenu"><a [routerLink]="['/logout']"><!-- <i class="ti-spray"></i> -->Logout</a></li>
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div *ngIf="auth.isAuthenticated(); else infoText" style="margin-top: 10px;">
+              <router-outlet></router-outlet>
+            </div>
+            <ng-template #infoText>
+              <div>
+                <h3>Please login...</h3>
+                <button class="btn btn-primary" (click)="auth.login()">Login</button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     
+
+<app-footer></app-footer>
