@@ -78,8 +78,6 @@
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="src\app\callback\callback.component.html" />
-    <Content Include="src\app\footer\footer.component.html" />
-    <Content Include="src\app\header\header.component.html" />
     <Content Include="src\app\history\history.component.html" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\invoice\invoice.component.html" />
@@ -125,8 +123,6 @@
     <Content Include="src\app\login\login.component.sass" />
     <Content Include="src\app\registration\registration.component.sass" />
     <Content Include="src\app\thankyou\thankyou.component.sass" />
-    <Content Include="src\app\footer\footer.component.sass" />
-    <Content Include="src\app\header\header.component.sass" />
     <Content Include="src\assets\data\oscar.json" />
     <Content Include="src\app\history\history.component.sass" />
     <Content Include="src\app\invoice\invoice.component.sass" />
@@ -151,6 +147,7 @@
     <Content Include="src\assets\css\fonts\themify.ttf" />
     <Content Include="src\assets\css\fonts\themify.woff" />
     <Content Include="src\assets\css\style.scss" />
+    <Content Include="src\assets\data\getusers.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,10 +175,6 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\callback\callback.component.spec.ts" />
     <TypeScriptCompile Include="src\app\callback\callback.component.ts" />
-    <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
-    <TypeScriptCompile Include="src\app\header\header.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\history\history.component.spec.ts" />
     <TypeScriptCompile Include="src\app\history\history.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
@@ -209,6 +202,8 @@
     <TypeScriptCompile Include="src\app\services\common.service.ts" />
     <TypeScriptCompile Include="src\app\services\data.service.ts" />
     <TypeScriptCompile Include="src\app\services\index.ts" />
+    <TypeScriptCompile Include="src\app\services\user.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user.service.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\shared\header\header.component.spec.ts" />

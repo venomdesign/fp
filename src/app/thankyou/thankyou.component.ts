@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ThankyouComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }

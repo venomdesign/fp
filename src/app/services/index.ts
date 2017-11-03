@@ -7,3 +7,4 @@ export * from './data.service';
 export * from './global.service';
 export * from './http-service-variables';
 export * from './scope-guard.service';
+export * from './user.service';

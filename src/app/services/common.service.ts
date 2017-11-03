@@ -15,11 +15,12 @@ export class CommonService {
   ) { }
 
   public getClaimsByEmailAddress(emailAddress: string) {
+    var postUrl = HTTP_SERVICE_VARIABLES.tokenUrl;
     const payload = 'grant_type=password' + '&' + 'username=' + emailAddress;
 
     this.progressBar.start();
     this.http
-      .post('http://localhost:56086/oauth/token', payload)
+      .post(postUrl, payload)
       .subscribe(
       (response: Response) => {
         this.userClaims = response.json();

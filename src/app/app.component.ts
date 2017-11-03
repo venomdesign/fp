@@ -1,24 +1,18 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 
-import { AuthService } from './services/auth.service';
-import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.sass']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.sass']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-    constructor(public auth: AuthService,
-        private slimLoadingBarService: SlimLoadingBarService,
-        private toastr: ToastsManager,
-        vRef: ViewContainerRef) {
-        this.toastr.setRootViewContainerRef(vRef);
-    }
-    ngOnInit() {
-        this.auth.handleAuthentication();
-    }
+  constructor() { };
+
 }

@@ -1,6 +1,6 @@
+import { AuthService } from '../services/auth.service';
 import { CommonService } from './../services/common.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'app-callback',
@@ -9,14 +9,16 @@ import { AuthService } from '../services/auth.service';
 })
 
 export class CallbackComponent implements OnInit {
-    allClaims: any;
+    currentUserProfile: any;
+    userClaims: any;
 
-    constructor(public auth: AuthService, private common: CommonService) { }
+    constructor(private auth: AuthService, private common: CommonService) { }
 
     ngOnInit() {
-        console.log('callback.component.ts ngOnInit()');
-        this.allClaims = this.common.getClaimsByEmailAddress('ric.castagna@fnf.com');
-        console.log('Claims in callback: ', this.allClaims);
+        this.currentUserProfile = this.auth.currentUserProfile.subscribe();
+        console.log('Current user profile: ', this.currentUserProfile);
+        this.userClaims = this.common.getClaimsByEmailAddress(this.currentUserProfile.name);
+        console.log('User claims: ', this.userClaims);
     }
 
 }

@@ -1,6 +1,6 @@
 import { Http, HttpModule, RequestOptions } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +10,7 @@ import { ToastModule } from 'ng2-toastr/ng2-toastr';
 //import { Ng2SmartTableModule } from '../../node_modules/ng2-smart-table';
 import { AppComponent } from './app.component';
 
-import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService } from './services/index';
+import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService, UserService } from './services/index';
 import { CommonService } from './services/common.service';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -30,52 +30,55 @@ import { WalletComponent } from './wallet/wallet.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { UserService } from "./services/user.service";
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        // Containers
-        ProfileComponent,
-        HomeComponent,
-        CallbackComponent,
-        PasswordComponent,
-        SandboxComponent,
-        RegistrationComponent,
-        LoginComponent,
-        ThankyouComponent,
-        InvoiceComponent,
-        HistoryComponent,
-        WalletComponent,
-        LogoutComponent,
-        // Layout
-        HeaderComponent,
-        FooterComponent,
-        SidebarComponent,
-        NavBarComponent
+  declarations: [
+    AppComponent,
+    // Containers
+    ProfileComponent,
+    HomeComponent,
+    CallbackComponent,
+    PasswordComponent,
+    SandboxComponent,
+    RegistrationComponent,
+    LoginComponent,
+    ThankyouComponent,
+    InvoiceComponent,
+    HistoryComponent,
+    WalletComponent,
+    LogoutComponent,
+    // Layout
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    NavBarComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    AppRoutingModule,
+    SlimLoadingBarModule.forRoot(),
+    RouterModule.forRoot(routes),
+    ToastModule.forRoot(),
+    [
+      ChartsModule
     ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        HttpModule,
-        AppRoutingModule,
-        SlimLoadingBarModule.forRoot(),
-        RouterModule.forRoot(routes),
-        ToastModule.forRoot(),
-        [
-            ChartsModule
-        ],
-    ],
-    providers: [
-        AuthService,
-        AuthGuardService,
-        CommonService,
-        GlobalService,
-        ScopeGuardService,
-        DataService
-    ],
-    bootstrap: [AppComponent]
+  ],
+  providers: [
+    AuthService,
+    AuthGuardService,
+    CommonService,
+    GlobalService,
+    ScopeGuardService,
+    DataService,
+    UserService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

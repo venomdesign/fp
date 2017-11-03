@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Rx';
 import 'rxjs/add/operator/filter';
 
 import * as auth0 from 'auth0-js';
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-
+    currentUserProfile = new Subject();
     userProfile: any;
 
     auth0 = new auth0.WebAuth({
@@ -55,6 +56,21 @@ export class AuthService {
             }
 
             cb(err, profile);
+        });
+    }
+
+    public getCurrentUserProfile() {
+        const accessToken = localStorage.getItem('access_token');
+
+        if (!accessToken) {
+            throw new Error('Missing access token');
+        }
+
+        const self = this;
+        this.auth0.client.userInfo(accessToken, (err, profile) => {
+            if (profile) {
+                self.currentUserProfile.next(profile);
+            }
         });
     }
 

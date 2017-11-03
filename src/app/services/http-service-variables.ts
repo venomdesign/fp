@@ -1,11 +1,11 @@
 interface HttpConfig {
-    url: string;
+    endpointUrl: string;
     tokenUrl: string;
     apiVersion: number;
 }
 
 export const HTTP_SERVICE_VARIABLES: HttpConfig = {
-    url: 'http://localhost:53432/api/',
+    endpointUrl: 'http://localhost:56086/api/',
     tokenUrl: 'http://localhost:56086/oauth/token',
     apiVersion: 1
 };

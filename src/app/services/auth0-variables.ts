@@ -12,6 +12,7 @@ export const AUTH_CONFIG: AuthConfig = {
     domain: 'rc-dev-fnf.auth0.com',
     responseType: 'token id_token',
     audience: 'https://rc-dev-fnf.auth0.com/userinfo',
-    callbackURL: 'http://localhost:4200/callback',
+    //callbackURL: 'http://localhost:4200/callback',
+    callbackURL: 'https://easypay-int.fnf.com/callback',
     scope: 'openid profile groups'
 };
