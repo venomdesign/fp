@@ -30,7 +30,6 @@ import { WalletComponent } from './wallet/wallet.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { UserService } from "./services/user.service";
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
