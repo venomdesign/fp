@@ -70,7 +70,6 @@ export class HomeComponent {
       this.router.navigate(['/register']);
 
     } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
-      localStorage.removeItem('isDisabled');
       localStorage.setItem('title', "No FOPS No SSO");
       localStorage.setItem('isDisabled', 'false');
       this.router.navigate(['/register']);
