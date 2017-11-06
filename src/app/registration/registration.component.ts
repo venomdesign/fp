@@ -11,9 +11,11 @@ import { Location } from '@angular/common';
   providers: [RegistrationServiceService]
 })
 export class RegistrationComponent implements OnInit {
-
+  title = localStorage.getItem("title");
+  isDisabled = localStorage.getItem('isDisabled');
   constructor(private _registrationService: RegistrationServiceService, private router: Router) { }
   @Input() user: User;
+  
   responseStatus: Object = [];
   status: boolean;
   loading: boolean;
@@ -21,6 +23,13 @@ export class RegistrationComponent implements OnInit {
   public location = '';
   ngOnInit() {
     this.user = new User();
+    localStorage.getItem("title");
+    if(localStorage.getItem("title") == "No FOPS with SSO"){
+      
+      //if(this.isDisabled == 'true'){
+       // alert('yes');
+      //}
+    }
   }
 
   register() {

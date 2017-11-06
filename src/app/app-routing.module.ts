@@ -12,7 +12,7 @@ import { InvoiceComponent } from "./invoice/invoice.component";
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { CallbackComponent } from "./callback/callback.component";
-
+import { Errors } from "./pages/errors";
 
 const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -27,6 +27,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'callback', component: CallbackComponent },
+    { path: 'error', component: Errors },
     { path: '**', component: HomeComponent }
 ];
 

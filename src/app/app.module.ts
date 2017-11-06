@@ -30,7 +30,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-
+import { Errors } from './pages/errors';
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
@@ -53,7 +53,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    NavBarComponent
+    NavBarComponent,
+    Errors
   ],
   imports: [
     BrowserModule,

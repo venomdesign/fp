@@ -10,7 +10,7 @@ export class UserService {
     isEmailRegisterd(email: string) {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:56086/api/v1/ValidateEmail', JSON.stringify({ email: email }), { headers: headers })
+        return this.http.post('https://fops-oct.firebaseio.com/', JSON.stringify({ email: email }), { headers: headers })
             .map((response: Response) => response.json())
             .catch(this.handleError);
     }

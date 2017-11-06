@@ -1,7 +1,7 @@
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-    		<h2>Register</h2>
+    		<h2>{{title}}</h2>
 			<form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !userName.valid }">
@@ -15,14 +15,14 @@
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 					    <label for="password">Password</label>
-					    <input type="text" class="form-control" name="password" [(ngModel)]="user.PASSWORD" #password="ngModel" required value="" placeholder="Password" />
+					    <input type="text" class="form-control" name="password" [(ngModel)]="user.PASSWORD" #password="ngModel" required value="" placeholder="Password" disabled="{{isDisabled}}"/>
 					    <div *ngIf="f.submitted && !userName.valid" class="help-block">Email Address is required</div>
 					</div>
 				</div>
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !conf_password.valid }">
 					    <label for="password">Confirm Password</label>
-					    <input type="text" class="form-control" name="conf_password" [(ngModel)]="user.CONF_PASSWORD" #conf_password="ngModel" required value="" placeholder="Confirm Password" />
+					    <input type="text" class="form-control" name="conf_password" [(ngModel)]="user.CONF_PASSWORD" #conf_password="ngModel" required value="" placeholder="Confirm Password" disabled="{{isDisabled}}" />
 					    <div *ngIf="f.submitted && !userName.valid" class="help-block">Email Address is required</div>
 					</div>
 				</div>
@@ -46,9 +46,9 @@
 				</div>
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !COMPANY_ID.valid }">
-					    <label for="username">Company Id</label>
-					    <input type="text" class="form-control" name="COMPANY_ID" [(ngModel)]="user.COMPANY_ID" #COMPANY_ID="ngModel" required  value="" placeholder="Company ID"/>
-					    <div *ngIf="f.submitted && !COMPANY_ID.valid" class="help-block">Company ID is required</div>
+					    <label for="username">Company Name</label>
+					    <input type="text" class="form-control" name="COMPANY_ID" [(ngModel)]="user.COMPANY_ID" #COMPANY_ID="ngModel" required  value="" placeholder="Company Name"/>
+					    <div *ngIf="f.submitted && !COMPANY_ID.valid" class="help-block">Company Name is required</div>
 					</div>
 				</div>
 			 	<!-- <div class="row">
@@ -132,10 +132,10 @@
 					<div class="form-group col-sm-12">
 				    	<label class="control-label">Enable Multi-Factor Authentication</label>
 				    	<span> <label class="radio-inline control-label">
-								<input type="radio" name="mfaEnable" value="1">
+								<input type="radio" name="mfaEnable" value="1" disabled="{{isDisabled}}">
 								Yes
 							</label> <label class="radio-inline control-label">
-								<input type="radio" name="mfaEnable" value="0">
+								<input type="radio" name="mfaEnable" value="0" disabled="{{isDisabled}}">
 								No
 							</label>
 						</span>

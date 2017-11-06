@@ -15,16 +15,19 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
+
 export class HomeComponent {
   isAuthenticated = false;
 
   title = 'app';
   formSubmitclicked = false;
-
+  isAllowed = false;
   form: FormGroup;
+  isDisabled: string;
 
-  constructor(private userService: UserService, private fb: FormBuilder) {
+  constructor(private userService: UserService, private fb: FormBuilder, private router: Router) {
     this.buildForm();
+    this.isDisabled = localStorage.getItem('isDisabled');
   }
 
   buildForm(): void {
@@ -48,8 +51,33 @@ export class HomeComponent {
     });
     return q;
   }
+  get email() { return this.form.get('email'); }
   onSubmit() {
-    alert("yup");
-    this.formSubmitclicked = true;
+    //console.log(this.message);
+    if(this.email.value == "FOPSWITHSSO@TEST.COM"){
+      localStorage.setItem("title", "Something Wrong");
+      localStorage.removeItem('isDisabled');
+      this.isAllowed=false; this.router.navigate(['/error']);
+    }
+    else if(this.email.value == "BLOCKEDSSO@TEST.COM"){
+      localStorage.setItem("title", "Please Contact Help Desk");
+      localStorage.removeItem('isDisabled');
+      this.isAllowed=false; this.router.navigate(['/error']);
+    } else if(this.email.value == "NOFOPSWITHSSO@TEST.COM"){
+      //alert("Disabled fields");
+      localStorage.setItem('isDisabled', 'true');
+      localStorage.setItem('title', "No FOPS with SSO");
+      this.isAllowed=true; this.router.navigate(['/register']);
+    } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
+      localStorage.setItem('title', "No FOPS No SSO");
+      this.isAllowed=true; 
+      localStorage.removeItem('isDisabled');
+      this.router.navigate(['/register']);
+      this.formSubmitclicked = true;
+    } else { 
+      localStorage.setItem("title", "You Already have a FOPS account");
+      localStorage.removeItem('isDisabled');
+      this.isAllowed=false; this.router.navigate(['/error']);
+    }
   }
 }
