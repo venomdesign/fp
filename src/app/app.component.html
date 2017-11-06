@@ -3,7 +3,7 @@
   <div *ngIf="auth.isAuthenticated()" class="user-profile" style="float: right;">
     <div class="monogram">XX</div>
     <div class="user-menu">
-      <a class="pointer" routerLink="/profile">{{profile?.nickname}}</a>
+      <a class="pointer" routerLink="/profile"></a>
       <a class="pointer" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp;Logout</a>
       <a><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;Settings</a>
     </div>
@@ -71,6 +71,8 @@
 <!-- </div> -->
 <!-- end wrapper -->
 <!-- Navigation Bar-->
+<!-- <app-nav-bar></app-nav-bar> -->
+
 <header id="topnav">
   <div class="topbar-main">
     <div class="container-fluid">
@@ -116,7 +118,7 @@
             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
               <!-- item-->
               <div class="dropdown-item noti-title">
-                <h5 class="text-overflow"><small class="text-white">Welcome ! {{profile?.nickname}}</small> </h5>
+                <h5 class="text-overflow"><small class="text-white">Welcome ! </small> </h5>
               </div>
               <!-- item-->
               <a [routerLink]="['/profile']" class="dropdown-item notify-item">
@@ -174,14 +176,28 @@
 </header>
 <!-- End Navigation Bar-->
 
-<div class="wrapper">
-  <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-sm-12">
+<div class="wrapper">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <!-- <div class="btn-group pull-right">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="#">Bread 1</a></li>
+                            <li class="breadcrumb-item"><a href="#">Bread 2</a></li>
+                            <li class="breadcrumb-item active">Active Bread</li>
+                        </ol>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="card-box">
           <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
+        </div>
+    </div> <!-- end container -->
 </div>
+<!-- end wrapper -->
 <app-footer></app-footer>

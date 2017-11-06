@@ -29,25 +29,25 @@
 				<div class="row">
 					<div class="form-group col-sm-5" [ngClass]="{ 'has-error': f.submitted && !FIRST_NAME.valid }">
 					    <label for="FIRST_NAME">First Name</label>
-					    <input type="text" class="form-control" name="FIRST_NAME" [(ngModel)]="user.FIRST_NAME" #FIRST_NAME="ngModel" required value="" placeholder="First Name"/>
+					    <input type="text" class="form-control" name="FIRST_NAME" maxlength="50" [(ngModel)]="user.FIRST_NAME" #FIRST_NAME="ngModel" required pattern="[a-zA-Z]*"  placeholder="First Name"/>
 					    <div *ngIf="f.submitted && !FIRST_NAME.valid" class="help-block">First Name is required</div>
 					</div>
 			
 					<div class="form-group col-sm-2">
 					    <label for="MIDDLE_INITIAL">M. Initial</label>
-					    <input type="text" class="form-control" name="MIDDLE_INITIAL" [(ngModel)]="user.MIDDLE_INITIAL" #MIDDLE_INITIAL="ngModel" value="" placeholder="MI" />
+					    <input type="text" class="form-control" name="MIDDLE_INITIAL" [(ngModel)]="user.MIDDLE_INITIAL" #MIDDLE_INITIAL="ngModel" value="" pattern="[a-zA-Z]*" placeholder="MI" maxlength="1" />
 					</div>
 				
 					<div class="form-group col-sm-5" [ngClass]="{ 'has-error': f.submitted && !LAST_NAME.valid }">
 					    <label for="LAST_NAME">Last Name</label>
-					    <input type="text" class="form-control" name="LAST_NAME" [(ngModel)]="user.LAST_NAME" #LAST_NAME="ngModel" required value="" placeholder="Last Name" />
+					    <input type="text" class="form-control" pattern="[a-zA-Z]*" maxlength="50" name="LAST_NAME" [(ngModel)]="user.LAST_NAME" #LAST_NAME="ngModel" required value="" placeholder="Last Name" />
 					    <div *ngIf="f.submitted && !LAST_NAME.valid" class="help-block">Last Name is required</div>
 					</div>
 				</div>
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !COMPANY_ID.valid }">
 					    <label for="username">Company Name</label>
-					    <input type="text" class="form-control" name="COMPANY_ID" [(ngModel)]="user.COMPANY_ID" #COMPANY_ID="ngModel" required  value="" placeholder="Company Name"/>
+					    <input type="text" class="form-control" name="COMPANY_ID" maxlength="50" [(ngModel)]="user.COMPANY_ID" #COMPANY_ID="ngModel" required  value="" placeholder="Company Name"/>
 					    <div *ngIf="f.submitted && !COMPANY_ID.valid" class="help-block">Company Name is required</div>
 					</div>
 				</div>
@@ -94,17 +94,17 @@
 					<div class="form-group col-sm-8" [ngClass]="{ 'has-error': f.submitted && !PHONE_NUMBER.valid }">
 					    <label for="PHONE_NUMBER">Phone Number</label>
 					    <input type="text" class="form-control" maxlength="14" name="PHONE_NUMBER" [(ngModel)]="user.PHONE_NUMBER" #PHONE_NUMBER="ngModel" required value="" placeholder="Phone Number" />
-					    <div *ngIf="f.submitted && !PHONE_NUMBER.valid" class="help-block">Phone Number is required</div>
+					    <div *ngIf="f.submitted && !PHONE_NUMBER.valid" class="help-block" pattern="/^[_A-Za-z0-9-+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/">Phone Number is required</div>
 					</div>
 					<div class="form-group col-sm-4">
 					    <label for="PHONE_EXTENSION">EXT</label>
-					    <input type="text" maxlength="5" class="form-control" name="PHONE_EXTENSION" [(ngModel)]="user.PHONE_EXTENSION" #PHONE_EXTENSION="ngModel" required value="" placeholder="Ext" />
+					    <input type="text" maxlength="5" class="form-control" name="PHONE_EXTENSION" [(ngModel)]="user.PHONE_EXTENSION" #PHONE_EXTENSION="ngModel" pattern="[0-9]+" placeholder="Ext" />
 					</div>					
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-8">
 					    <label for="MOBILE_NUMBER">Mobile Number</label>
-					    <input type="text" class="form-control" maxlength="14" name="MOBILE_NUMBER" [(ngModel)]="user.MOBILE_NUMBER" #MOBILE_NUMBER="ngModel" value="" placeholder="Mobile Number" />
+					    <input type="text" class="form-control" maxlength="14" name="MOBILE_NUMBER" [(ngModel)]="user.MOBILE_NUMBER" #MOBILE_NUMBER="ngModel" value="" placeholder="Mobile Number" pattern="/^[_A-Za-z0-9-+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/" />
 					</div>
 				</div>
 			 	<div class="row">

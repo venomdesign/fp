@@ -53,8 +53,11 @@ export class HomeComponent {
   }
   get email() { return this.form.get('email'); }
   onSubmit() {
+    if(this.email.value == "" || this.email.value == null){
+      return false;
+    }
     //console.log(this.message);
-    if(this.email.value == "FOPSWITHSSO@TEST.COM"){
+    else if(this.email.value == "FOPSWITHSSO@TEST.COM"){
       localStorage.setItem("title", "Something Wrong");
       localStorage.removeItem('isDisabled');
       this.router.navigate(['/error']);

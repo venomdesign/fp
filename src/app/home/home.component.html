@@ -1,4 +1,22 @@
-<div>
+  <div class="wrapper-page">
+  <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm">
+    <div class="input-group">
+      <input autofocus pInputText type="email" id="username" formControlName="email" name="email" class="form-control form-control-lg"
+             placeholder="Enter Your Email Address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+required>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary">Submit</button><!--  [disabled]="!form.valid" -->
+      </span>
+    </div>
+    <span *ngIf="form.get('email').dirty || formSubmitclicked">
+        <small class="error" *ngIf="form.get('email').hasError('isEmailUnique')">This email has been registered already</small>
+        <small class="error" *ngIf="form.get('email').hasError('required')">The Email field is required.</small>
+        <small class="error" *ngIf="form.get('email').hasError('pattern')">The Email field must contain a valid email address.</small>
+      </span>
+  </form>
+  </div>
+<!-- 
+  <div>
   <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm"><br><br><br>
     <div class="form-group">
       <input autofocus pInputText type="email" id="username" formControlName="email" name="email" class="form-control form-control-lg"
@@ -13,4 +31,4 @@
       <button type="submit" class="btn btn-success btn-lg btn-block" label="Singup">Login</button>
     </div>
   </form>
-</div>
+</div> -->

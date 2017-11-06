@@ -14,6 +14,7 @@
 
 #topnav {
   position: fixed;
+  width: 100vw;
   right: 0;
   left: 0;
   top: 0;
@@ -22,7 +23,9 @@
   border: 0;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  min-height: 62px; }
+  min-height: 62px;
+  max-width: 1180px;
+  margin: 0 auto; }
   #topnav .has-submenu.active a {
     color: #036; }
     #topnav .has-submenu.active a i {
@@ -392,14 +395,14 @@
 
 /* Footer */
 .footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   bottom: 0;
   text-align: left !important;
   padding: 20px 0;
   position: absolute;
   right: 0;
   background-color: #ffffff;
-  left: 0; }
+  left: 0; width: 100vw;}
   .footer ul li {
     padding-left: 10px;
     padding-right: 10px; }
@@ -539,18 +542,20 @@
  =============*/
 body {
   background: #f5f5f5;
-  margin: 0;
   color: #4c5667;
   overflow-x: hidden !important;
   font-size: 0.95rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  padding-bottom: 65px; }
+  padding-bottom: 65px;
+  max-width: 1180px;
+  margin: 0 auto;
+  box-shadow: -2px 3px 25px rgba(0, 0, 0, 0.02); }
 
 html {
   overflow-x: hidden;
   position: relative;
   min-height: 100%;
-  background: #f5f5f5; }
+  background: #ededed; }
 
 * {
   outline: none !important; }
@@ -573,7 +578,9 @@ a:hover, a:active, a:focus {
   position: absolute;
   right: 0;
   left: 0;
-  text-align: center; }
+  text-align: center;
+  max-width: 1180px;
+  margin: 0 auto; }
 
 #wrapper {
   height: 100%;
@@ -684,7 +691,7 @@ code, pre {
   background: transparent !important; }
 
 .bg-primary {
-  background-color: #036 !important; }
+  background-color: #3bafda !important; }
 
 .bg-success {
   background-color: #00b19d !important; }
@@ -724,7 +731,7 @@ code, pre {
   color: #98a6ad !important; }
 
 .text-primary {
-  color: #036 !important; }
+  color: #3bafda !important; }
 
 .text-warning {
   color: #ffaa00 !important; }
@@ -994,7 +1001,7 @@ code, pre {
   background-color: rgba(0, 150, 136, 0.7); }
 
 .waves-effect.waves-primary .waves-ripple {
-  background-color: fade(#036, 40%); }
+  background-color: fade(#3bafda, 40%); }
 
 .waves-notransition {
   -webkit-transition: none !important;
@@ -1957,7 +1964,7 @@ code, pre {
   padding: 10px 20px !important; }
 
 .tabs-bordered li a.active {
-  border-bottom: 2px solid #036 !important; }
+  border-bottom: 2px solid #3bafda !important; }
 
 /* Navpills */
 .nav-pills > li > a {
@@ -2229,12 +2236,12 @@ Modal
   .conversation-list .odd p {
     color: #f2f2f2; }
   .conversation-list .odd .ctext-wrap {
-    background: #036 !important; }
+    background: #3bafda !important; }
     .conversation-list .odd .ctext-wrap i {
       color: #ffffff; }
     .conversation-list .odd .ctext-wrap:after {
       border-color: rgba(238, 238, 242, 0) !important;
-      border-left-color: #036 !important;
+      border-left-color: #3bafda !important;
       left: 100% !important;
       top: 20% !important; }
 
@@ -2358,8 +2365,10 @@ label {
 .input-sm {
   height: 30px; }
 
+.input-group-btn { vertical-align: top; }
+
 .input-group-btn .btn {
-  padding: 7px 14px; }
+  padding: 9px 14px; }
 
 .has-success .form-control {
   border-color: #00b19d;
@@ -2385,7 +2394,7 @@ label {
   padding: 3px 7px;
   border: 1px solid #f3f3f3; }
   .bootstrap-tagsinput .label-info {
-    background-color: #036 !important;
+    background-color: #3bafda !important;
     display: inline-block;
     padding: 2px 10px;
     border-radius: 3px;
@@ -2393,8 +2402,8 @@ label {
     margin: 2px; }
 
 /* Multiple select*/
-/*.ms-container {
-  background: transparent url("../images/multiple-arrow.png") no-repeat 50% 50%; }*/
+.ms-container {
+  /* background: transparent url("../images/multiple-arrow.png") no-repeat 50% 50%; */ }
   .ms-container .ms-list {
     box-shadow: none;
     border: 1px solid #f3f3f3; }
@@ -2500,7 +2509,7 @@ label {
 
 .datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-  background-color: #036 !important;
+  background-color: #3bafda !important;
   background-image: none;
   box-shadow: none;
   text-shadow: none; }
@@ -2512,7 +2521,7 @@ label {
   border: 2px solid #eeeeee; }
 
 .datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
-  background-color: #036 !important;
+  background-color: #3bafda !important;
   background-image: none;
   box-shadow: none; }
 
@@ -2929,7 +2938,7 @@ label {
   color: #797979 !important; }
 
 .mce-menu-item-normal.mce-active {
-  background-color: #036 !important; }
+  background-color: #3bafda !important; }
   .mce-menu-item-normal.mce-active .mce-text {
     color: #ffffff !important; }
 
@@ -3241,7 +3250,7 @@ div#datatable-buttons_info {
   background: #ffffff; }
 
 .tablesaw-enhanced .tablesaw-bar .btn:hover, .tablesaw-enhanced .tablesaw-bar .btn:focus, .tablesaw-enhanced .tablesaw-bar .btn:active {
-  color: #036 !important;
+  color: #3bafda !important;
   background-color: #f5f5f5;
   outline: none !important;
   box-shadow: none !important;
@@ -4000,7 +4009,7 @@ h3.timeline-title {
   font-size: 30px !important;
   font-weight: 700;
   line-height: 70px;
-  color: #036 !important; }
+  color: #3bafda !important; }
 
 .user-thumb img {
   height: 88px;

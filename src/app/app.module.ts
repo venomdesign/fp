@@ -9,7 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 //import { Ng2SmartTableModule } from '../../node_modules/ng2-smart-table';
 import { AppComponent } from './app.component';
-
+import { CollapseModule } from 'ngx-bootstrap';
 import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService, UserService } from './services/index';
 import { CommonService } from './services/common.service';
 import { ProfileComponent } from './profile/profile.component';
@@ -54,7 +54,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     FooterComponent,
     SidebarComponent,
     NavBarComponent,
-    Errors
+    Errors,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +64,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    CollapseModule,
     SlimLoadingBarModule.forRoot(),
     RouterModule.forRoot(routes),
     ToastModule.forRoot(),
