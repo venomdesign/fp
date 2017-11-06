@@ -57,27 +57,28 @@ export class HomeComponent {
     if(this.email.value == "FOPSWITHSSO@TEST.COM"){
       localStorage.setItem("title", "Something Wrong");
       localStorage.removeItem('isDisabled');
-      this.isAllowed=false; this.router.navigate(['/error']);
+      this.router.navigate(['/error']);
     }
     else if(this.email.value == "BLOCKEDSSO@TEST.COM"){
       localStorage.setItem("title", "Please Contact Help Desk");
       localStorage.removeItem('isDisabled');
-      this.isAllowed=false; this.router.navigate(['/error']);
+      this.router.navigate(['/error']);
     } else if(this.email.value == "NOFOPSWITHSSO@TEST.COM"){
       //alert("Disabled fields");
       localStorage.setItem('isDisabled', 'true');
       localStorage.setItem('title', "No FOPS with SSO");
-      this.isAllowed=true; this.router.navigate(['/register']);
-    } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
-      localStorage.setItem('title', "No FOPS No SSO");
-      this.isAllowed=true; 
-      localStorage.removeItem('isDisabled');
       this.router.navigate(['/register']);
-      this.formSubmitclicked = true;
+
+    } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
+      localStorage.removeItem('isDisabled');
+      localStorage.setItem('title', "No FOPS No SSO");
+      localStorage.setItem('isDisabled', 'false');
+      this.router.navigate(['/register']);
+
     } else { 
       localStorage.setItem("title", "You Already have a FOPS account");
       localStorage.removeItem('isDisabled');
-      this.isAllowed=false; this.router.navigate(['/error']);
+      this.router.navigate(['/error']);
     }
   }
 }
