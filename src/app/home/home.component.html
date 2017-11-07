@@ -1,7 +1,7 @@
 <div class="wrapper-page">
   <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm">
     <div class="input-group">
-      <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required email pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button><!--  [disabled]="!form.valid" -->
       </span>
