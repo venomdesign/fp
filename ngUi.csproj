@@ -83,6 +83,9 @@
     <Content Include="src\app\invoice\invoice.component.html" />
     <Content Include="src\app\login\login.component.html" />
     <Content Include="src\app\logout\logout.component.html" />
+    <Content Include="src\app\pages\404.component.html" />
+    <Content Include="src\app\pages\500.component.html" />
+    <Content Include="src\app\pages\errors.html" />
     <Content Include="src\app\password\password.component.html" />
     <Content Include="src\app\profile\profile.component.html" />
     <Content Include="src\app\registration\registration.component.html" />
@@ -185,6 +188,11 @@
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\logout\logout.component.spec.ts" />
     <TypeScriptCompile Include="src\app\logout\logout.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\404.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\500.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\errors.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
     <TypeScriptCompile Include="src\app\password\password.component.spec.ts" />
     <TypeScriptCompile Include="src\app\password\password.component.ts" />
     <TypeScriptCompile Include="src\app\profile\profile.component.spec.ts" />
@@ -213,6 +221,7 @@
     <TypeScriptCompile Include="src\app\shared\nav-bar\nav-bar.component.ts" />
     <TypeScriptCompile Include="src\app\shared\sidebar\sidebar.component.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\validation\forms.ts" />
     <TypeScriptCompile Include="src\app\thankyou\thankyou.component.spec.ts" />
     <TypeScriptCompile Include="src\app\thankyou\thankyou.component.ts" />
     <TypeScriptCompile Include="src\app\wallet\wallet.component.spec.ts" />

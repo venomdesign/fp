@@ -3,7 +3,7 @@
     <div class="input-group">
       <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button><!--  [disabled]="!form.valid" -->
+        <button type="submit" class="btn btn-primary">Submit</button><!--  [disabled]="!form.valid" -->
       </span>
     </div>
     <span *ngIf="form.get('email').dirty || formSubmitclicked">
