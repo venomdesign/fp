@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { EmailValidator } from  '../shared/validation/forms';
 
 @Component({
   selector: 'app-home',
@@ -32,12 +32,10 @@ export class HomeComponent {
 
   buildForm(): void {
     this.form = this.fb.group({
-      'email': ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ],
-        this.isEmailUnique.bind(this)
-      ]
+      email: new FormControl('', [
+          Validators.maxLength(30), 
+          EmailValidator.isValidMailFormat, 
+          Validators.required])
     });
 
   } create

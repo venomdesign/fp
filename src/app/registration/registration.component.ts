@@ -3,6 +3,7 @@ import { RegistrationServiceService } from './registration-service.service';
 import { User } from './User'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { EmailValidator } from  '../shared/validation/forms';
 
 @Component({
   selector: 'app-registration',
@@ -37,8 +38,7 @@ export class RegistrationComponent implements OnInit {
       data => {
         console.log(this.responseStatus = data)
         this.router.navigate(["/thankyou"]);
-      }
-      ,
+      },
       err => console.log(err),
       () => console.log('Request Completed')
     );
@@ -46,3 +46,25 @@ export class RegistrationComponent implements OnInit {
     this.status = true;
   }
 }
+
+/*
+firstName: new FormControl('', [
+              Validators.maxLength(50), 
+              Validators.pattern('[a-zA-Z ]*'),
+              Validators.required
+              ]),
+          lastName: new FormControl('', [
+              Validators.maxLength(50), 
+              Validators.pattern('[a-zA-Z ]*'), 
+              Validators.required]),
+      email: new FormControl('', [
+          Validators.maxLength(50), 
+          EmailValidator.isValidMailFormat, 
+          Validators.required]),
+          password: new FormControl('', [
+              Validators.maxLength(50), 
+              Validators.required]),
+          confirmPassword: new FormControl('', [
+              Validators.maxLength(50), 
+              Validators.required])
+*/
