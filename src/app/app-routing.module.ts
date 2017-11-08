@@ -30,7 +30,7 @@ const routes: Routes = [
     { path: 'invoice', component: InvoiceComponent },
     { path: 'thankyou', component: ThankyouComponent },
     //{ path: 'signs', component: SignupComponent },
-    //{ path: 'lands', component: LandingComponent },    
+    //{ path: 'lands', component: LandingComponent },
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'callback', component: CallbackComponent },
