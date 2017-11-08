@@ -14,6 +14,11 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { CallbackComponent } from "./callback/callback.component";
 import { Errors } from "./pages/errors";
 
+//TEST
+//import { SignupComponent } from './signup/signup.component';
+//import { LandingComponent } from './landing/landing.component';
+
+
 const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
@@ -24,6 +29,8 @@ const routes: Routes = [
     { path: 'registration', component: RegistrationComponent },
     { path: 'invoice', component: InvoiceComponent },
     { path: 'thankyou', component: ThankyouComponent },
+    //{ path: 'signs', component: SignupComponent },
+    //{ path: 'lands', component: LandingComponent },    
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'callback', component: CallbackComponent },

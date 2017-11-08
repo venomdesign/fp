@@ -1,62 +1,64 @@
-<!-- 
-  <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
-  <script type="text/javascript">
-    // Set up some global variables
-    var menuState = "icon"; // Used to manage the state of the hamburger menu
+<div class="cat__footer">
 
-    function slideMenuOpen(state) {
-      if (state === 'icon') {
-        // set the menu state
-        menuState = 'full';
+        
+            <div class="container text-center">
+                
 
-        // show/hide the menus
-        $('#menuContainer').animate({
-          width: "15em"
-        }, 200, "linear", function () {
-          $('#fullSideMenu').show();
-          $('#iconSideMenu').hide();
-        });
+    <div class="cat__footer__top">
+        <div class="row">
+            <div class="col-lg-6 mb-3">
+                <div class="mb-3">
+                    <strong></strong>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                            <li class="mb-2"><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <div class="mb-3">
+                    <strong></strong>
+                </div>
+                <div class="cat__footer__description">
+                    <p></p>
 
-        // swap out the collapse icon
-        $('.hamburgerIcon').html('<i id="faHamburgerIcon" class="fa fa-angle-double-left fa-2x fa-inverse"></i>');
-      } else {
-        // set the menu state
-        menuState = 'icon';
-
-        // show/hide the menus
-        $('#iconSideMenu').show();
-        $('#fullSideMenu').hide();
-        $('#menuContainer').animate({
-          width: "50px"
-        }, 200, "linear");
-
-        // We want burgers!
-        $('.hamburgerIcon').html('<i id="faHamburgerIcon" class="fa fa-bars fa-2x fa-inverse"></i>');
-      };
-
-    }
-
-    $(document)
-      .ready(function () {
-        //$('.hamburger').click(function () {
-        //  slideMenuOpen(menuState);
-        //});
-
-        // set the tooltips for the icon menu, based on user settings
-        if (localStorage.getItem('showTooltips') == null) {
-          localStorage.setItem('showTooltips', 'true');
-        };
-
-         if (localStorage.getItem('showTooltips') === 'true') {
-         }
-      });
-
-  </script> -->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">2018 &copy; FNF</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</footer>
+    <div class="cat__footer__bottom">
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-8">
+                <div class="cat__footer__company">
+                    <img class="cat__footer__company-logo" src="" target="_blank" title="">
+                    <span>
+                        @copy; 2017 <a href="http://fnf.com/" target="_blank">FNF</a>
+                        <br>
+                        All rights reserved
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript: void(0);" class="cat__core__scroll-top" onclick="$('body, html').animate({'scrollTop': 0}, 500);"><i class="icmn-arrow-up"></i></a>
+</div></div>

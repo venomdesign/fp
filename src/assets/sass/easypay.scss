@@ -1,0 +1,40 @@
+@import "easypay/variables";
+@import "easypay/mixins";
+
+@import "easypay/typography";
+
+// Core CSS
+@import "easypay/misc";
+@import "easypay/buttons";
+@import "easypay/inputs";
+@import "easypay/progress-bars";
+@import "easypay/sliders";
+@import "easypay/alerts";
+@import "easypay/labels";
+@import "easypay/tooltips-and-popovers";
+@import "easypay/sections";
+@import "easypay/checkbox-radio";
+@import "easypay/navbars";
+@import "easypay/images";
+@import "easypay/cards";
+@import "easypay/footers";
+
+
+// Bootstrap Switch
+@import "easypay/bootstrap-switch";
+
+// Fancy Stuff
+@import "easypay/dropdown";
+//
+// icons
+@import "easypay/icons";
+//
+@import "easypay/tabs-navs-pagination";
+@import "easypay/collapse";
+@import "easypay/carousel";
+@import "easypay/modal";
+//
+@import "easypay/responsive";
+@import "easypay/plugins/datetimepicker";
+@import "easypay/social-buttons";
+@import "easypay/examples";

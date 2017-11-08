@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Http, Response, RequestOptions, ResponseContentType } from '@angular/http';
 
 import 'rxjs/add/observable/zip';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Rx';
-import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx'
 import { Router } from '@angular/router';
-import { EmailValidator } from  '../shared/validation/forms';
+
+import { EmailValidator } from '../shared/index';
+
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,11 @@ import { EmailValidator } from  '../shared/validation/forms';
 })
 
 export class HomeComponent {
+    model = {
+        left: true,
+        middle: false,
+        right: false
+    };
   isAuthenticated = false;
 
   title = 'app';

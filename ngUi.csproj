@@ -92,7 +92,7 @@
     <Content Include="src\app\sandbox\sandbox.component.html" />
     <Content Include="src\app\shared\footer\footer.component.html" />
     <Content Include="src\app\shared\header\header.component.html" />
-    <Content Include="src\app\shared\nav-bar\nav-bar.component.html" />
+    <Content Include="src\app\shared\navbar\navbar.component.html" />
     <Content Include="src\app\shared\sidebar\sidebar.component.html" />
     <Content Include="src\app\thankyou\thankyou.component.html" />
     <Content Include="src\app\wallet\wallet.component.html" />
@@ -134,7 +134,6 @@
     <Content Include="src\app\shared\footer\footer.component.sass" />
     <Content Include="src\app\shared\header\header.component.sass" />
     <Content Include="src\app\shared\sidebar\sidebar.component.sass" />
-    <Content Include="src\app\shared\nav-bar\nav-bar.component.sass" />
     <Content Include="src\assets\css\fonts\fontawesome-webfont.eot" />
     <Content Include="src\assets\css\fonts\fontawesome-webfont.ttf" />
     <Content Include="src\assets\css\fonts\fontawesome-webfont.woff" />
@@ -151,6 +150,7 @@
     <Content Include="src\assets\css\fonts\themify.woff" />
     <Content Include="src\assets\css\style.scss" />
     <Content Include="src\assets\data\getusers.json" />
+    <Content Include="src\app\shared\navbar\navbar.component.sass" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,6 +184,8 @@
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\invoice\invoice.component.spec.ts" />
     <TypeScriptCompile Include="src\app\invoice\invoice.component.ts" />
+    <TypeScriptCompile Include="src\app\invoice\invoiceDetailRow.component.ts" />
+    <TypeScriptCompile Include="src\app\invoice\products.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\logout\logout.component.spec.ts" />
@@ -217,8 +219,8 @@
     <TypeScriptCompile Include="src\app\shared\header\header.component.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\nav-bar\nav-bar.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\shared\nav-bar\nav-bar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
     <TypeScriptCompile Include="src\app\shared\sidebar\sidebar.component.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\sidebar\sidebar.component.ts" />
     <TypeScriptCompile Include="src\app\shared\validation\forms.ts" />
