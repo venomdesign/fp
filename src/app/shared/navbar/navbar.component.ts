@@ -3,8 +3,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 
 @Component({
     selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.sass']
+    templateUrl: './navbar.component.html'
 })
 export class NavBarComponent implements OnInit {
     private toggleButton: any;
@@ -47,23 +46,18 @@ export class NavBarComponent implements OnInit {
             this.sidebarClose();
         }
     };
-    isHome() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
+    isNoNav() {
+        var title = this.location.prepareExternalUrl(this.location.path()),
+        list = ['', 'login', 'home', 'password', 'error', 'registration', 'register', 'logout'];
 
-        if( titlee === '/home' ) {
-            return true;
+        title = title.slice(1);
+
+        for (var i = 0; i < list.length; i++){
+            if(title = list[i]){
+                return true;
+            } else {
+                return false;
+            }
         }
-        else {
-            return false;
-        }
-    }
-    isDocumentation() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        if( titlee === '/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    }    
 }

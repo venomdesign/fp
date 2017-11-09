@@ -37,8 +37,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavBarComponent } from './shared/navbar/navbar.component';
 import { Errors } from './pages/errors';
 import { CategoryDetailComponent } from './invoice/invoiceDetailRow.component';
-import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
+//import { SignupComponent } from './signup/signup.component';
+//import { LandingComponent } from './landing/landing.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -61,8 +61,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         FooterComponent,
         SidebarComponent,
         NavBarComponent,
-        SignupComponent,
-        LandingComponent,
+        //SignupComponent,
+        //LandingComponent,
         Errors,
         CategoryDetailComponent
     ],

@@ -1,3 +1,164 @@
 .k-pdf 
   margin-left: 10px
   margin-right: 10px
+
+table.k-grid-table
+  clear: both
+  margin-top: 6px !important
+  margin-bottom: 6px !important
+  max-width: none !important
+  border-collapse: separate !important
+  td, th
+    -webkit-box-sizing: content-box
+    box-sizing: content-box
+  td.k-grid-table_empty, th.k-grid-table_empty
+    text-align: center
+  &.nowrap
+    td, th
+      white-space: nowrap
+
+div
+  &.k-grid-table_wrapper div
+    &.k-grid-table_length
+      label
+        font-weight: 400
+        text-align: left
+        white-space: nowrap
+      select
+        width: 75px
+        display: inline-block
+    &.k-grid-table_filter
+      text-align: right
+      label
+        font-weight: 400
+        white-space: nowrap
+        text-align: left
+      input
+        margin-left: .5em
+        display: inline-block
+        width: auto
+    &.k-grid-table_info
+      padding-top: .85em
+      white-space: nowrap
+    &.k-grid-table_paginate
+      margin: 0
+      white-space: nowrap
+      text-align: right
+      ul.pagination
+        margin: 2px 0
+        white-space: nowrap
+        justify-content: flex-end
+  &.k-grid-table_scrollBody table, &.k-grid-table_scrollHead table.k-grid-table
+    margin-bottom: 0 !important
+  &.k-grid-table_wrapper div.k-grid-table_processing
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 200px
+    margin-left: -100px
+    margin-top: -26px
+    text-align: center
+    padding: 1em 0
+  &.k-grid-table_scrollBody table, &.k-grid-table_scrollFoot > .k-grid-table_scrollFootInner > table
+    margin-top: 0 !important
+    border-top: none
+
+table.k-grid-table thead
+  > tr >
+    td
+      &.sorting, &.sorting_asc, &.sorting_desc
+        padding-right: 30px
+    th
+      &.sorting, &.sorting_asc, &.sorting_desc
+        padding-right: 30px
+    td:active, th:active
+      outline: 0
+  .sorting, .sorting_asc, .sorting_asc_disabled, .sorting_desc, .sorting_desc_disabled
+    cursor: pointer
+    position: relative
+  .sorting
+    &:after, &:before
+      position: absolute
+      bottom: .9em
+      display: block
+      opacity: .3
+  .sorting_asc
+    &:after, &:before
+      position: absolute
+      bottom: .9em
+      display: block
+      opacity: .3
+  .sorting_asc_disabled
+    &:after, &:before
+      position: absolute
+      bottom: .9em
+      display: block
+      opacity: .3
+  .sorting_desc
+    &:after, &:before
+      position: absolute
+      bottom: .9em
+      display: block
+      opacity: .3
+  .sorting_desc_disabled
+    &:after, &:before
+      position: absolute
+      bottom: .9em
+      display: block
+      opacity: .3
+  .sorting:before, .sorting_asc:before, .sorting_asc_disabled:before, .sorting_desc:before, .sorting_desc_disabled:before
+    right: 1em
+    content: "\2191"
+  .sorting:after, .sorting_asc:after, .sorting_asc_disabled:after, .sorting_desc:after, .sorting_desc_disabled:after
+    right: .5em
+    content: "\2193"
+  .sorting_asc:before, .sorting_desc:after
+    opacity: 1
+  .sorting_asc_disabled:before, .sorting_desc_disabled:after
+    opacity: 0
+
+div
+  &.k-grid-table_scrollBody table
+    thead
+      .sorting:after, .sorting_asc:after, .sorting_desc:after
+        display: none
+    tbody tr:first-child
+      td, th
+        border-top: none
+  &.k-grid-table_scrollFoot > .k-grid-table_scrollFootInner
+    box-sizing: content-box
+
+@media screen and (max-width: 767px)
+  div.k-grid-table_wrapper div
+    &.k-grid-table_filter, &.k-grid-table_info, &.k-grid-table_length, &.k-grid-table_paginate
+      text-align: center
+
+table
+  &.k-grid-table.table-sm
+    > thead > tr > th
+      padding-right: 20px
+    .sorting:before, .sorting_asc:before, .sorting_desc:before
+      top: 5px
+      right: .85em
+    .sorting:after, .sorting_asc:after, .sorting_desc:after
+      top: 5px
+  &.table-bordered.k-grid-table
+    td, th
+      border-left-width: 0
+    td:last-child, th:last-child
+      border-right-width: 0
+
+div.k-grid-table_scrollHead table.table-bordered
+  border-bottom-width: 0
+
+table.table-bordered.k-grid-table tbody
+  td, th
+    border-bottom-width: 0
+
+div.table-responsive > div.k-grid-table_wrapper > div.row
+  margin: 0
+  > div[class^=col-]
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0

@@ -6,6 +6,8 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
 
 @Component({
     selector: 'invoice-grid',
+    styleUrls: ['all.css'],
+    encapsulation: ViewEncapsulation.None,
     template: `
     <div class="main">
         <div class="section text-center">
@@ -19,15 +21,19 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
           (dataStateChange)="dataStateChange($event)"
           [sortable]="{ allowUnsort: true, mode: 'multiple' }"
           [sort]="sort"
+          title="Invoices"
           (sortChange)="sortChange($event)"
           filterable="menu"
           [pageable]="true"
-          (pageChange)="pageChange($event)" >
+          (pageChange)="pageChange($event)">
+          <kendo-grid-messages pagerItemsPerPage="Invoices" pagerItems="Invoices"></kendo-grid-messages>
+
+
             <ng-template kendoGridToolbarTemplate>
                 <div class="action-buttons">
-                    <button kendoGridPDFCommand class="k-pdf pull-right"><span class='fa fa-file-pdf-o'></span>&nbsp;Export to PDF</button>
-                    <button kendoGridExcelCommand class="btn-pdf pull-right"><span class='fa fa-file-excel-o'></span>&nbsp;Export to Excel</button>
-                    <button class="k-btn k-btn-primary">Pay Selected</button>
+                    <button kendoGridPDFCommand class="btn btn-danger pull-right"><i class='fa fa-file-pdf-o'></i>&nbsp;Export to PDF</button>
+                    <button kendoGridExcelCommand class="btn btn-success pull-right"><i class='fa fa-file-excel-o'></i>&nbsp;Export to Excel</button>
+                    <button class="btn btn-primary testMove">Pay Selected</button>
                 </div>
             </ng-template>
 
@@ -37,7 +43,7 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
             <kendo-grid-column field="InvoiceDate" title="Invoice Date" filter="date" format="{0:d}" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
             <kendo-grid-column field="InvoiceReference" title="Invoice Ref. #" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
             <kendo-grid-column field="OrderNumber" title="File No." [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="CurrentBalance" title="Invoice Amount" [headerStyle]="{'font-size': '.7em'}" format="{0:c}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
+            <kendo-grid-column field="CurrentBalance" title="Invoice Amount" filter="numeric" [headerStyle]="{'font-size': '.7em'}" format="{0:c}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
             <kendo-grid-column field="ReferenceData" title="Reference Data" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
 
             <kendo-grid-column field="Discontinued" [headerStyle]="{'font-size': '.7em'}" title="Pay" width="45" [filterable]="false">
@@ -46,18 +52,15 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
                 </ng-template>
             </kendo-grid-column>
 
-            <ng-template kendoGridDetailTemplate let-dataItem >
-              <section *ngIf="dataItem.Charges">
-                <kendo-grid-column field="item.TransactionDescription" title="Description" [headerStyle]="{'font-size': '.7em'}" [style] = "{'font-size': '.7em'}"> </kendo-grid-column>
-                <kendo-grid-column field="item.ChargeAmount" title="Amount" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"> </kendo-grid-column>
-              </section>
-            </ng-template>
+            <div *kendoGridDetailTemplate="let dataItem">
+              <invoice-details [details]="dataItem.Charges"></invoice-details>
+            </div>
             
             <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
                <div class="pager-prev-next"><kendo-pager-prev-buttons></kendo-pager-prev-buttons>
                <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
                <kendo-pager-next-buttons></kendo-pager-next-buttons></div>
-               <div class="page-sizes"><kendo-pager-page-sizes [pageSizes]="[5, 10, 40]"></kendo-pager-page-sizes></div>
+               <div class="page-sizes"><kendo-pager-page-sizes [pageSizes]="[5, 10, 25]" title="Invoices"></kendo-pager-page-sizes></div>
                <div class="pager-info"><kendo-pager-info></kendo-pager-info></div>
             </ng-template>
 
@@ -90,13 +93,8 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
                 <kendo-excelexport-column field="ReferenceData" title="Reference Data"></kendo-excelexport-column>
             </kendo-grid-excel>
         </kendo-grid></div></div></div>
-    `,
-    styleUrls: ['../../../node_modules/@progress/kendo-theme-bootstrap/dist/all.css'],
-    encapsulation: ViewEncapsulation.None
-
+    `
 })
-
-
 
 export class InvoiceComponent implements OnInit {
 
@@ -116,7 +114,8 @@ export class InvoiceComponent implements OnInit {
     };
 
     constructor() {
-        this.sort = [{ field: "AttentionName", dir: "asc" }, { field: "InvoiceDate", dir: "asc"}];
+        this.sort = [{ field: "ContactName", dir: "asc" }, { field: "InvoiceDate", dir: "desc"}];
+        this.invoices = orderBy(this.invoices, this.sort);
         this.loadProducts();
         this.sort = [];
 

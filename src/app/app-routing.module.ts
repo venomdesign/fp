@@ -20,7 +20,7 @@ import { Errors } from "./pages/errors";
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'password', component: PasswordComponent },

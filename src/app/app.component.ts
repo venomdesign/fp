@@ -7,47 +7,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  preserveWhitespaces: false
+  styleUrls: ['./app.component.sass']
 })
 
 export class AppComponent {
 
   constructor(public location: Location) { };
-
-    isHome() {
-        var title = this.location.prepareExternalUrl(this.location.path());
-
-        if( title === '/home' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    isDocumentation() {
-        var title = this.location.prepareExternalUrl(this.location.path());
-        if( title === '/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    isRegister() {
-        var title = this.location.prepareExternalUrl(this.location.path());
-
-        if( title === '/register' || title === '/registration') {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
         removeFooter() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        titlee = titlee.slice( 1 );
-        if(titlee === 'signup' || titlee === 'nucleoicons'){
+        var title = this.location.prepareExternalUrl(this.location.path());
+        title = title.slice( 1 );
+        if(title === 'signup' || title === 'nucleoicons'){
             return false;
         }
         else {
