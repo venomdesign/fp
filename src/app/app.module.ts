@@ -37,6 +37,15 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavBarComponent } from './shared/navbar/navbar.component';
 import { Errors } from './pages/errors';
 import { CategoryDetailComponent } from './invoice/invoiceDetailRow.component';
+
+// Quick for email check
+import { BlockedssoComponent } from "./pages/blockedsso/blockedsso.component";
+import { FopsuserComponent } from "./pages/fopsuser/fopsuser.component";
+import { FwssoComponent } from "./pages/fwsso/fwsso.component";
+import { NfnssoComponent } from "./pages/nfnsso/nfnsso.component";
+import { NfwssoComponent } from "./pages/nfwsso/nfwsso.component";
+
+// Testing
 //import { SignupComponent } from './signup/signup.component';
 //import { LandingComponent } from './landing/landing.component';
 
@@ -64,6 +73,11 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         //SignupComponent,
         //LandingComponent,
         Errors,
+        BlockedssoComponent,
+        FopsuserComponent,
+        FwssoComponent,
+        NfnssoComponent,
+        NfwssoComponent,
         CategoryDetailComponent
     ],
     imports: [

@@ -14,6 +14,12 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { CallbackComponent } from "./callback/callback.component";
 import { Errors } from "./pages/errors";
 
+import { BlockedssoComponent } from "./pages/blockedsso/blockedsso.component";
+import { FopsuserComponent } from "./pages/fopsuser/fopsuser.component";
+import { FwssoComponent } from "./pages/fwsso/fwsso.component";
+import { NfnssoComponent } from "./pages/nfnsso/nfnsso.component";
+import { NfwssoComponent } from "./pages/nfwsso/nfwsso.component";
+
 //TEST
 //import { SignupComponent } from './signup/signup.component';
 //import { LandingComponent } from './landing/landing.component';
@@ -34,6 +40,15 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'callback', component: CallbackComponent },
+
+
+    { path: 'pages/blockedsso', component: BlockedssoComponent },
+    { path: 'pages/fopsuser', component: FopsuserComponent },
+    { path: 'pages/fwsso', component: FwssoComponent },
+    { path: 'pages/nfnsso', component: NfnssoComponent },
+    { path: 'pages/nfwsso', component: NfwssoComponent },
+
+
     { path: 'error', component: Errors },
     { path: '**', component: HomeComponent }
 ];

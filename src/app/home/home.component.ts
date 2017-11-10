@@ -29,11 +29,9 @@ export class HomeComponent {
   formSubmitclicked = false;
   isAllowed = false;
   form: FormGroup;
-  isDisabled: string;
 
   constructor(private userService: UserService, private fb: FormBuilder, private router: Router) {
     this.buildForm();
-    this.isDisabled = localStorage.getItem('isDisabled');
   }
 
   buildForm(): void {
@@ -63,28 +61,23 @@ export class HomeComponent {
     //console.log(this.message);
     else if(this.email.value == "FOPSWITHSSO@TEST.COM"){
       localStorage.setItem("title", "Something Wrong");
-      localStorage.removeItem('isDisabled');
-      this.router.navigate(['/error']);
+      this.router.navigate(['/pages/fwsso']);
     }
     else if(this.email.value == "BLOCKEDSSO@TEST.COM"){
       localStorage.setItem("title", "Please Contact Help Desk");
-      localStorage.removeItem('isDisabled');
-      this.router.navigate(['/error']);
+      this.router.navigate(['/pages/blockedsso']);
     } else if(this.email.value == "NOFOPSWITHSSO@TEST.COM"){
       //alert("Disabled fields");
-      localStorage.setItem('isDisabled', 'true');
       localStorage.setItem('title', "No FOPS with SSO");
-      this.router.navigate(['/register']);
+      this.router.navigate(['/pages/nfwsso']);
 
     } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
       localStorage.setItem('title', "No FOPS No SSO");
-      localStorage.setItem('isDisabled', 'false');
-      this.router.navigate(['/register']);
+      this.router.navigate(['/pages/nfnsso']);
 
     } else { 
       localStorage.setItem("title", "You Already have a FOPS account");
-      localStorage.removeItem('isDisabled');
-      this.router.navigate(['/error']);
+      this.router.navigate(['/pages/fopsuser']);
     }
   }
 }

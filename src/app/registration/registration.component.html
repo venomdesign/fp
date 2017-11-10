@@ -23,14 +23,14 @@
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 					    <label for="password">Password</label>
-					    <input type="text" class="form-control" name="password" [(ngModel)]="user.PASSWORD" #password="ngModel" required value="" placeholder="Password" disabled="{{isDisabled}}"/>
+					    <input type="text" class="form-control" name="password" [(ngModel)]="user.PASSWORD" #password="ngModel" required value="" placeholder="Password"/>
 					    <div *ngIf="f.submitted && !userName.valid" class="help-block">Email Address is required</div>
 					</div>
 				</div>
 			 	<div class="row">
 					<div class="form-group col-sm-12" [ngClass]="{ 'has-error': f.submitted && !conf_password.valid }">
 					    <label for="password">Confirm Password</label>
-					    <input type="text" class="form-control" name="conf_password" [(ngModel)]="user.CONF_PASSWORD" #conf_password="ngModel" required value="" placeholder="Confirm Password" disabled="{{isDisabled}}" />
+					    <input type="text" class="form-control" name="conf_password" [(ngModel)]="user.CONF_PASSWORD" #conf_password="ngModel" required value="" placeholder="Confirm Password" />
 					    <div *ngIf="f.submitted && !userName.valid" class="help-block">Email Address is required</div>
 					</div>
 				</div>
@@ -140,10 +140,10 @@
 					<div class="form-group col-sm-12">
 				    	<label class="control-label">Enable Multi-Factor Authentication</label>
 				    	<span> <label class="radio-inline control-label">
-								<input type="radio" name="mfaEnable" value="1" disabled="{{isDisabled}}">
+								<input type="radio" name="mfaEnable" value="1">
 								Yes
 							</label> <label class="radio-inline control-label">
-								<input type="radio" name="mfaEnable" value="0" disabled="{{isDisabled}}">
+								<input type="radio" name="mfaEnable" value="0">
 								No
 							</label>
 						</span>
