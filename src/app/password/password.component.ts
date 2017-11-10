@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService, AuthenticationService } from '../services/index';
 
 @Component({
   selector: 'app-password',
@@ -6,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password.component.sass']
 })
 export class PasswordComponent implements OnInit {
-
-  constructor() { 
 
 /*function reset(username){
     angularAuth0.changePassword({
@@ -17,12 +17,34 @@ export class PasswordComponent implements OnInit {
     }, callback);
 }*/
 
-  }
+   model: any = {};
+    loading = false;
+    returnUrl: string;
 
-  ngOnInit() {
-  
-  
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService) { }
 
-  }
+    ngOnInit() {
+        // reset login status
+        this.authenticationService.logout();
 
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
+
+    login() {
+        this.loading = true;
+        this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+    }
 }

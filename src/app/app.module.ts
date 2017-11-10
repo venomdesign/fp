@@ -14,8 +14,8 @@ import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { SliderModule } from '@progress/kendo-angular-inputs';
 //Excel Export
-
-import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService, UserService } from './services/index';
+import { TextMaskModule } from '../../node_modules/angular2-text-mask';
+import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService, UserService, AuthenticationService, AlertService } from './services/index';
 import { CommonService } from './services/common.service';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -84,6 +84,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
+        TextMaskModule,
         ReactiveFormsModule,
         HttpModule,
         AppRoutingModule,
@@ -102,6 +103,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     providers: [
         AuthService,
         AuthGuardService,
+        AlertService,
+        AuthenticationService,
         CommonService,
         GlobalService,
         ScopeGuardService,

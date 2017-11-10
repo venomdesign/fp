@@ -11,6 +11,7 @@ export const invoices = [
             "InvoiceDate": "01/01/2017",
             "OriginalInvoiceAmount": "2400.00",
             "CurrentBalance": "1800.00",
+            "ToPay": false,
             "Charges": [
                 {
                     "TransactionDescription": "Research Title",
@@ -42,6 +43,7 @@ export const invoices = [
             "InvoiceDate": "11/01/2016",
             "OriginalInvoiceAmount": "2400.00",
             "CurrentBalance": "3200.00",
+            "ToPay": false,
             "Charges": [
                 {
                     "TransactionDescription": "Research Title",
@@ -73,6 +75,7 @@ export const invoices = [
             "InvoiceDate": "03/01/2017",
             "OriginalInvoiceAmount": "1500.00",
             "CurrentBalance": "1500.00",
+            "ToPay": false,
             "Charges": [
                 {
                     "TransactionDescription": "Research Title",
@@ -100,6 +103,7 @@ export const invoices = [
             "InvoiceDate": "04/01/2017",
             "OriginalInvoiceAmount": "2500.00",
             "CurrentBalance": "2500.00",
+            "ToPay": false,
             "Charges": [
                 {
                     "TransactionDescription": "Late Fees",

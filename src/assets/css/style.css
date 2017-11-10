@@ -833,7 +833,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   .has-success .form-control:focus {
     border: 1px solid #6bd098;
     color: #6bd098; }
-  .has-danger .form-control {
+
+.has-danger .form-control {
     background-color: #FFC0A4;
     border: 1px solid #f5593d;
     color: #f5593d; }

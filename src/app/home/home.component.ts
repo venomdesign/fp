@@ -69,11 +69,11 @@ export class HomeComponent {
     } else if(this.email.value == "NOFOPSWITHSSO@TEST.COM"){
       //alert("Disabled fields");
       localStorage.setItem('title', "No FOPS with SSO");
-      this.router.navigate(['/pages/nfwsso']);
+      this.router.navigate(['/registration']);
 
     } else if(this.email.value == "NOFOPSNOSSO@TEST.COM") {
       localStorage.setItem('title', "No FOPS No SSO");
-      this.router.navigate(['/pages/nfnsso']);
+      this.router.navigate(['/registration']);
 
     } else { 
       localStorage.setItem("title", "You Already have a FOPS account");

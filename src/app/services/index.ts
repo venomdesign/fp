@@ -1,4 +1,5 @@
 export * from './alert.service';
+export * from './Authentication.service';
 export * from './auth.service';
 export * from './auth0-variables';
 export * from './auth-guard.service';

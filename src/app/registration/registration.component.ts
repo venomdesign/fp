@@ -4,6 +4,7 @@ import { User } from './User'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { EmailValidator } from  '../shared/validation/forms';
+import { TextMaskModule } from '../../../node_modules/angular2-text-mask';
 
 @Component({
   selector: 'app-registration',
@@ -16,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   isDisabled = localStorage.getItem('isDisabled');
   constructor(private _registrationService: RegistrationServiceService, private router: Router) { }
   @Input() user: User;
-  
+  public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   responseStatus: Object = [];
   status: boolean;
   loading: boolean;
@@ -24,13 +25,8 @@ export class RegistrationComponent implements OnInit {
   public location = '';
   ngOnInit() {
     this.user = new User();
-    localStorage.getItem("title");
-    if(localStorage.getItem("title") == "No FOPS with SSO"){
-      
-      //if(this.isDisabled == 'true'){
-       // alert('yes');
-      //}
-    }
+
+  
   }
 
   register() {
