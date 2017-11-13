@@ -59,7 +59,7 @@ export class HomeComponent {
       return false;
     }
     //console.log(this.message);
-    else if(this.email.value == "FOPSWITHSSO@TEST.COM"){
+    else if(this.email.value.toUpperCase() == "FOPSWITHSSO@TEST.COM"){
       localStorage.setItem("title", "Something Wrong");
       this.router.navigate(['/pages/fwsso']);
     }

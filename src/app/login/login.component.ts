@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../services/index';
@@ -40,4 +40,25 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
+}*/
+
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html'
+})
+export class LoginComponent {
+  public loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+    password: ["", Validators.required]
+  });
+  constructor(public fb: FormBuilder) {}
+  doLogin(event) {
+    let formData = this.loginForm.value;
+    let email = this.loginForm.controls.email.value;
+    console.log(event);
+    console.log(this.loginForm.value);
+  }
 }

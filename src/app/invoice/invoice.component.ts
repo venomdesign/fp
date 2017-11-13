@@ -21,6 +21,7 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
           [filter]="state.filter"
           (dataStateChange)="dataStateChange($event)"
           [sortable]="{ allowUnsort: true, mode: 'multiple' }"
+          class = "dataTable"
           [sort]="sort"
           (sortChange)="sortChange($event)"
           filterable="menu"
@@ -33,7 +34,7 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
                 <div class="action-buttons">
                     &nbsp;&nbsp;<button kendoGridPDFCommand class="btn btn-outline-danger pull-right"><i class='fa fa-file-pdf-o'></i>&nbsp;Export to PDF</button>
                     <button kendoGridExcelCommand class="btn btn-outline-success pull-right"><i class='fa fa-file-excel-o'></i>&nbsp;Export to Excel</button>
-                    <button class="btn btn-primary testMove" (click)='PaySelected();'>View Selected</button>
+                    <button class="btn btn-primary testMove" (click)='PaySelected();' data-toggle="modal" data-target="#myModal">View Selected</button>
                 </div>
             </ng-template>
             <kendo-grid-column field="ToPay" [headerStyle]="{'font-size': '.7em'}" title="Pay" width="50" [filterable]="false">
@@ -83,7 +84,7 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
               </ng-template>
             </kendo-grid-pdf>
             <kendo-grid-excel fileName="Invoices.xlsx">
-                <kendo-excelexport-column  field="ContactName" title="Bill To Company"></kendo-excelexport-column>
+                <kendo-excelexport-column field="ContactName" title="Bill To Company"></kendo-excelexport-column>
                 <kendo-excelexport-column field="AttentionName" title="Bill To Attention"></kendo-excelexport-column>
                 <kendo-excelexport-column field="CustomerReference" title="Customer Reference"></kendo-excelexport-column>
                 <kendo-excelexport-column field="InvoiceDate" title="Invoice Date" format="{0:d}"></kendo-excelexport-column>
@@ -92,7 +93,34 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
                 <kendo-excelexport-column field="CurrentBalance" title="Invoice Amount"></kendo-excelexport-column>
                 <kendo-excelexport-column field="ReferenceData" title="Reference Data"></kendo-excelexport-column>
             </kendo-grid-excel>
-        </kendo-grid></div></div></div></div>
+        </kendo-grid>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="paymentSummary" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="paymentSummary">Invoice Summary</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">Lorem</div>
+            <div class="modal-footer">
+                <div class="left-side">
+                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                </div>
+                <div class="divider"></div>
+                <div class="right-side">
+                    <button type="button" class="btn btn-success btn-link">Pay Selected</button>
+                </div>
+            </div>
+              </div>
+          </div>
+        </div>
     `
 })
 

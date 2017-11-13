@@ -22,7 +22,7 @@ import { NfwssoComponent } from "./pages/nfwsso/nfwsso.component";
 
 //TEST
 //import { SignupComponent } from './signup/signup.component';
-//import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 const routes: Routes = [
@@ -36,7 +36,7 @@ const routes: Routes = [
     { path: 'invoice', component: InvoiceComponent },
     { path: 'thankyou', component: ThankyouComponent },
     //{ path: 'signs', component: SignupComponent },
-    //{ path: 'lands', component: LandingComponent },
+    { path: 'lands', component: LandingComponent },
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'callback', component: CallbackComponent },
