@@ -46,11 +46,10 @@ export class NavBarComponent implements OnInit {
             this.sidebarClose();
         }
     };
+
     isNoNav() {
         var title = this.location.prepareExternalUrl(this.location.path()),
         list = ['', 'login', 'home', 'password', 'error', 'registration', 'register', 'logout'];
-
-        title = title.slice(1);
 
         for (var i = 0; i < list.length; i++){
             if(title = list[i]){
@@ -59,5 +58,11 @@ export class NavBarComponent implements OnInit {
                 return false;
             }
         }
-    }    
+    }
+
+
 }
+
+
+
+

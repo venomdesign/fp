@@ -47,7 +47,7 @@ import { NfwssoComponent } from "./pages/nfwsso/nfwsso.component";
 
 // Testing
 //import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
+//import { LandingComponent } from './landing/landing.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -71,7 +71,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         SidebarComponent,
         NavBarComponent,
         //SignupComponent,
-        LandingComponent,
+        //LandingComponent,
         Errors,
         BlockedssoComponent,
         FopsuserComponent,

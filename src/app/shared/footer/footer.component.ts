@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var jquery:any;
+declare var $ :any;
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
@@ -10,5 +11,5 @@ export class FooterComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {}
+    ngOnInit() {$(".k-grid-header").removeAttr("style");}
 }

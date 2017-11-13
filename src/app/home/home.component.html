@@ -3,26 +3,36 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-8 mr-auto ml-auto">
-        <h2>Registration</h2>
-                <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm">
-                  <div class="form-group">
-                    <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                   <span *ngIf="form.get('email').dirty || formSubmitclicked">
-                    <small class="error" *ngIf="form.get('email').hasError('isEmailUnique')">This email has been registered already</small>
-                    <small class="error" *ngIf="form.get('email').hasError('required')">The Email field is required.</small>
-                    <small class="error" *ngIf="form.get('email').hasError('pattern')">The Email field must contain a valid email address.</small>
-                  </span>
-                  </div>
-                  <div class="form-group text-right m-t-20">
-                  <div class="col-xs-12">
-                      <button class="btn btn-primary" type="submit">Submit<!--[routerLink]="['/invoice']"-->
-                      </button>
-                  </div>
-              </div>
-                  
-                </form>
-              </div>
+          <h2>Registration</h2>
+          <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm">
+            <div class="form-group">
+              <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <span *ngIf="form.get('email').dirty || formSubmitclicked">
+                <small class="error" *ngIf="form.get('email').hasError('isEmailUnique')">This email has been registered already</small>
+                <small class="error" *ngIf="form.get('email').hasError('required')">The Email field is required.</small>
+                <small class="error" *ngIf="form.get('email').hasError('pattern')">The Email field must contain a valid email address.</small>
+              </span>
             </div>
-          </div>
+            <div class="form-group text-right m-t-20">
+              <div class="col-xs-12"><button class="btn btn-primary" type="submit">Submit</button></div><!-- data-toggle="modal" data-target="#myModal" -->
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="regError" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="regError">Registration Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">Your Account is blocked. Please Contact the help desk at 888-888-8888</div>
+      <div class="modal-footer">
+        <div><button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button></div>        
+      </div>
+    </div>
+  </div>
+</div> -->

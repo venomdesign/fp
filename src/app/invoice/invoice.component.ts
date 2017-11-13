@@ -1,8 +1,10 @@
-import { ViewEncapsulation, Component, OnInit, ViewChild } from '@angular/core';
+import { ViewEncapsulation, Component, AfterContentInit, ViewChild, ElementRef } from '@angular/core';
 import { process, State } from '@progress/kendo-data-query';
 import { invoices } from './products';
 import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
 import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } from '@progress/kendo-angular-grid';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
     selector: 'invoice-grid',
@@ -10,10 +12,13 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
     encapsulation: ViewEncapsulation.None,
     template: `
     <div class="wrapper">
-  <div class="page-header" style="background: #fff;">    
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-sm-8 mr-auto ml-auto">
+        <div class="page-header" style="background: #fff;">    
+                
+                <div class="row" style="width: 84%">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                    <div class="col-lg-12 col-sm-8 mr-auto ml-auto">
         <kendo-grid
           [data]="gridView"
           [pageSize]="pageSize"
@@ -21,7 +26,6 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
           [filter]="state.filter"
           (dataStateChange)="dataStateChange($event)"
           [sortable]="{ allowUnsort: true, mode: 'multiple' }"
-          class = "dataTable"
           [sort]="sort"
           (sortChange)="sortChange($event)"
           filterable="menu"
@@ -32,26 +36,32 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
 
             <ng-template kendoGridToolbarTemplate>
                 <div class="action-buttons">
-                    &nbsp;&nbsp;<button kendoGridPDFCommand class="btn btn-outline-danger pull-right"><i class='fa fa-file-pdf-o'></i>&nbsp;Export to PDF</button>
+                    <button class="btn btn-primary upperView" (click)='PaySelected();' data-toggle="modal" data-target="#myModal">View Selected</button>
+                   <button kendoGridPDFCommand class="btn btn-outline-danger pull-right"><i class='fa fa-file-pdf-o'></i>&nbsp;Export to PDF</button>
                     <button kendoGridExcelCommand class="btn btn-outline-success pull-right"><i class='fa fa-file-excel-o'></i>&nbsp;Export to Excel</button>
                     <button class="btn btn-primary testMove" (click)='PaySelected();' data-toggle="modal" data-target="#myModal">View Selected</button>
                 </div>
             </ng-template>
-            <kendo-grid-column field="ToPay" [headerStyle]="{'font-size': '.7em'}" title="Pay" width="50" [filterable]="false">
+            <kendo-grid-column field="ToPay" title="Pay" width="50" [filterable]="false">
                 <ng-template kendoGridCellTemplate let-dataItem>
-                    <input type="checkbox" [(ngModel)]="dataItem.ToPay" [checked]="dataItem.ToPay"/>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" [(ngModel)]="dataItem.ToPay" [checked]="dataItem.ToPay" class="form-check-input">
+                            <span class="form-check-sign"></span>
+                        </label>
+                    </div>
                 </ng-template>
             </kendo-grid-column>
-            <kendo-grid-column field="InvoiceReference" title="Ref. #" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="ContactName" title="Name" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="AttentionName" title="Attn To" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="CustomerReference" title="Cust. Ref." [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="InvoiceDate" title="Date" filter="date" format="{0:d}" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}" width='120px'></kendo-grid-column>
+            <kendo-grid-column field="InvoiceReference" title="Ref. #"></kendo-grid-column>
+            <kendo-grid-column field="ContactName" title="Name"></kendo-grid-column>
+            <kendo-grid-column field="AttentionName" title="Attn To"></kendo-grid-column>
+            <kendo-grid-column field="CustomerReference" title="Cust. Ref."></kendo-grid-column>
+            <kendo-grid-column field="InvoiceDate" title="Date" filter="date" format="{0:d}" width='120px'></kendo-grid-column>
             
-            <kendo-grid-column field="OrderNumber" title="File No." [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
+            <kendo-grid-column field="OrderNumber" title="File No."></kendo-grid-column>
             
-            <kendo-grid-column field="ReferenceData" title="Ref. Data" [headerStyle]="{'font-size': '.7em'}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
-            <kendo-grid-column field="CurrentBalance" title="Amount" filter="numeric" [headerStyle]="{'font-size': '.7em'}" format="{0:c}" [style]="{'font-size': '.7em'}"></kendo-grid-column>
+            <kendo-grid-column field="ReferenceData" title="Ref. Data"></kendo-grid-column>
+            <kendo-grid-column field="CurrentBalance" title="Amount" filter="numeric" format="{0:c}"></kendo-grid-column>
             
             <kendo-grid-messages pagerItemsPerPage="Invoices"></kendo-grid-messages> 
             <div class="noExport" *kendoGridDetailTemplate="let dataItem">
@@ -95,8 +105,13 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
             </kendo-grid-excel>
         </kendo-grid>
         
+       
         </div>
-        </div>
+        
+        <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
         </div>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="paymentSummary" aria-hidden="true">
@@ -111,7 +126,7 @@ import { GridComponent, GridDataResult, DataStateChangeEvent, PageChangeEvent } 
             <div class="modal-body">Lorem</div>
             <div class="modal-footer">
                 <div class="left-side">
-                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal" (click)="toggleTitle()">Cancel</button>
                 </div>
                 <div class="divider"></div>
                 <div class="right-side">
@@ -132,8 +147,13 @@ export class InvoiceComponent {
     public gridView: GridDataResult;
     public invoices: any[] = invoices;
     private paying: any[] = [];
-
+    elementRef: ElementRef;
+    
     @ViewChild(GridComponent) grid: GridComponent;
+
+    toggleTitle(){
+        $('.k-grid-header').attr('style','padding: 0');
+    }
 
     public state: State = {
         // Initial filter descriptor
@@ -143,11 +163,12 @@ export class InvoiceComponent {
         }
     };
 
-    constructor() {
+    constructor(elementRef: ElementRef) {
         this.sort = [{ field: "ContactName", dir: "asc" }, { field: "InvoiceDate", dir: "desc"}];
         this.invoices = orderBy(this.invoices, this.sort);
         this.loadProducts();
         this.sort = [];
+        this.elementRef = elementRef;
     }
 
     public sliderChange(pageIndex: number): void {
@@ -204,4 +225,8 @@ export class InvoiceComponent {
       alert('Consider them paid!');
     } 
 
+
+    ngAfterContentInit() {
+    $(".k-grid-header").removeAttr("style");
+    }
 }

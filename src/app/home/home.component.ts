@@ -25,7 +25,7 @@ export class HomeComponent {
     };
   isAuthenticated = false;
 
-  title = 'app';
+  title = '';
   formSubmitclicked = false;
   isAllowed = false;
   form: FormGroup;
@@ -61,11 +61,11 @@ export class HomeComponent {
     //console.log(this.message);
     else if(this.email.value.toUpperCase() == "FOPSWITHSSO@TEST.COM"){
       localStorage.setItem("title", "Something Wrong");
-      this.router.navigate(['/pages/fwsso']);
+      //this.router.navigate(['/pages/fwsso']);
     }
     else if(this.email.value == "BLOCKEDSSO@TEST.COM"){
       localStorage.setItem("title", "Please Contact Help Desk");
-      this.router.navigate(['/pages/blockedsso']);
+      //this.router.navigate(['/pages/blockedsso']);
     } else if(this.email.value == "NOFOPSWITHSSO@TEST.COM"){
       //alert("Disabled fields");
       localStorage.setItem('title', "No FOPS with SSO");
@@ -77,7 +77,9 @@ export class HomeComponent {
 
     } else { 
       localStorage.setItem("title", "You Already have a FOPS account");
-      this.router.navigate(['/pages/fopsuser']);
+      //this.router.navigate(['/pages/fopsuser']);
     }
   }
+
+
 }

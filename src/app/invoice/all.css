@@ -66,7 +66,8 @@
 .k-scheduler-navigation .k-nav-prev,
 .k-scheduler-navigation .k-nav-next, .k-scheduler-views li, .k-scheduler-footer li {
  }
-button.testMove { position: absolute; bottom: 5px; right: 15px; }
+button.testMove { position: absolute; bottom: -45px; right: 15px; }
+button.upperView { position: absolute; top: -45px; right: 15px;  }
 
 .k-button:hover, .k-button.k-state-hover, .k-button.k-flat:hover, .k-button.k-flat.k-state-hover, .k-dropdown > :hover,
 .k-dropdown .k-state-hover, .k-grid .k-button:hover, .k-spreadsheet-filter:hover, .k-action-buttons .k-button:hover, .k-dialog-buttongroup .k-button:hover, .k-pivot-toolbar .k-button:hover, .k-pivot-toolbar .k-button.k-state-hover,
@@ -3741,7 +3742,34 @@ div.page-sizes > .k-pager-sizes.k-label:after {content: ""}
   background-color: #003366;
   border-color: #003366;
   z-index: 2;
-  cursor: default; }
+  cursor: default;
+
+font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 30px;
+    height: 20px;
+    color: #303030;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    padding-left: 5px;
+    padding-right: 5px;
+
+   }
   .k-pager-numbers .k-state-selected.k-link,
   .k-pager-numbers .k-state-selected:hover.k-link {
     color: #ffffff; }
@@ -4120,7 +4148,7 @@ div.page-sizes > .k-pager-sizes.k-label:after {content: ""}
 .k-grid-header,
 .k-grid-footer {
   flex: 0 0 auto;
-  padding-right: 17px;
+  /* padding-right: 17px; */
   border-width: 0;
   border-style: solid;
   border-color: inherit; }
@@ -4137,24 +4165,18 @@ div.k-grid-footer {
 .k-ie div.k-grid-header {
   display: block; }
 
-.k-grid-header {
-  border-bottom-width: 1px; }
+.k-grid-header { }
   .k-grid-header table {
     margin-bottom: -1px; }
-  .k-grid-header .k-header {
-    position: relative;
-    vertical-align: bottom; }
+  .k-grid-header .k-header {  }
     .k-grid-header .k-header:first-child {
       border-left-width: 0; }
+        .k-grid-header .k-header:last-child {
+      border-right-width: 0; }
     .k-grid-header .k-header.k-first {
       border-left-width: 1px; }
   .k-grid-header .k-header > .k-link {
-    margin: -0.75rem -0.75rem;
-    padding: 0.75rem 0.75rem;
-    line-height: inherit;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis; }
+     }
   .k-grid-header .k-header.k-filterable > .k-link {
     margin-right: calc( 2px + 1rem + 1.25em); }
   .k-grid-header .k-header > .k-link:focus {
@@ -12800,49 +12822,6 @@ html .k-upload {
 
   /**** FIX KENDO TABLE **/
 
-table.dataTable { clear:both; margin-top:6px!important; margin-bottom:6px!important; max-width:none!important; border-collapse:separate!important }
-table.dataTable td,table.dataTable th { -webkit-box-sizing:content-box;box-sizing:content-box }
-table.dataTable td.dataTables_empty,table.dataTable th.dataTables_empty { text-align:center }
-table.dataTable.nowrap td,table.dataTable.nowrap th { white-space:nowrap }
-div.dataTables_wrapper div.dataTables_length label { font-weight:400; text-align:left; white-space:nowrap }
-div.dataTables_wrapper div.dataTables_length select { width:75px; display:inline-block}
-div.dataTables_wrapper div.dataTables_filter { text-align:right }
-div.dataTables_wrapper div.dataTables_filter label { font-weight:400; white-space:nowrap; text-align:left }
-div.dataTables_wrapper div.dataTables_filter input { margin-left:.5em; display:inline-block; width:auto }
-div.dataTables_wrapper div.dataTables_info { padding-top:.85em; white-space:nowrap}
-div.dataTables_wrapper div.dataTables_paginate { margin:0; white-space:nowrap; text-align:right}
-div.dataTables_wrapper div.dataTables_paginate ul.pagination { margin:2px 0; white-space:nowrap; justify-content:flex-end }
-div.dataTables_scrollBody table,div.dataTables_scrollHead table.dataTable { margin-bottom:0!important }
-div.dataTables_wrapper div.dataTables_processing { position:absolute; top:50%; left:50%; width:200px; margin-left:-100px; margin-top:-26px;text-align:center; padding:1em 0 }
-div.dataTables_scrollBody table,div.dataTables_scrollFoot>.dataTables_scrollFootInner>table { margin-top:0!important; border-top:none }
-table.dataTable thead>tr>td.sorting,table.dataTable thead>tr>td.sorting_asc,table.dataTable thead>tr>td.sorting_desc,table.dataTable thead>tr>th.sorting,table.dataTable thead>tr>th.sorting_asc,table.dataTable thead>tr>th.sorting_desc { padding-right:30px }
-table.dataTable thead>tr>td:active,table.dataTable thead>tr>th:active { outline:0 }
-table.dataTable thead .sorting,table.dataTable thead .sorting_asc,table.dataTable thead .sorting_asc_disabled,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_desc_disabled { cursor:pointer; position:relative }
-table.dataTable thead .sorting:after,table.dataTable thead .sorting:before,table.dataTable thead .sorting_asc:after,table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_asc_disabled:after,table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting_desc:before,table.dataTable thead .sorting_desc_disabled:after,table.dataTable thead .sorting_desc_disabled:before { position:absolute;bottom:.9em;display:block;opacity:.3}
-table.dataTable thead .sorting:before,table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc:before,table.dataTable thead .sorting_desc_disabled:before { right:1em;content:"\2191" }
-table.dataTable thead .sorting:after,table.dataTable thead .sorting_asc:after,table.dataTable thead .sorting_asc_disabled:after,table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting_desc_disabled:after { right:.5em;content:"\2193" }
-table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_desc:after { opacity:1 }
-table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc_disabled:after { opacity:0 }
-div.dataTables_scrollBody table thead .sorting:after,div.dataTables_scrollBody table thead .sorting_asc:after,div.dataTables_scrollBody table thead .sorting_desc:after { display:none }
-div.dataTables_scrollBody table tbody tr:first-child td,div.dataTables_scrollBody table tbody tr:first-child th { border-top:none}
-div.dataTables_scrollFoot>.dataTables_scrollFootInner { box-sizing:content-box }
-@media screen and (max-width:767px) { 
-  div.dataTables_wrapper div.dataTables_filter,
-  div.dataTables_wrapper div.dataTables_info,
-  div.dataTables_wrapper div.dataTables_length,
-  div.dataTables_wrapper div.dataTables_paginate { text-align:center }
-}
-table.dataTable.table-sm > thead > tr > th { padding-right:20px }
-table.dataTable.table-sm .sorting:before, table.dataTable.table-sm .sorting_asc:before, table.dataTable.table-sm .sorting_desc:before { top:5px;right:.85em }
-table.dataTable.table-sm .sorting:after, table.dataTable.table-sm .sorting_asc:after, table.dataTable.table-sm .sorting_desc:after { top:5px }
-table.table-bordered.dataTable td, table.table-bordered.dataTable th { border-left-width:0 }
-table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable th:last-child { border-right-width:0 }
-div.dataTables_scrollHead table.table-bordered, table.table-bordered.dataTable tbody td, table.table-bordered.dataTable tbody th { border-bottom-width:0 }
-div.table-responsive > div.dataTables_wrapper > div.row { margin:0 }
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:first-child { padding-left:0 }
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-child { padding-right:0 }
-
-
 .progress { width: 100%; height: 3rem;  }
 
 
@@ -12916,3 +12895,44 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 .table-inverse tr.active, .table-inverse th.active {
     background: #eef0f4;
 }
+
+
+/*rows*/
+
+.k-grid-content>table>tbody>tr
+{
+    background:#ccf;
+}
+
+
+.k-grid-content>table>tbody>.k-alt
+{
+    background:#cfc;
+}
+
+/*selection*/
+
+.k-grid table tr.k-state-selected
+{
+    background: #f99;
+    color: #fff;
+}
+
+div.row > div > kendo-grid > div > div > table > thead > tr > th { padding: 15px 8px;vertical-align: middle; border-bottom-width: 0;border-top: 1px solid #ccc; vertical-align: bottom;
+    /* border-bottom: 2px solid #e9ecef; */ font-size: 1rem; font-weight: 500; }
+
+/* div.row > div > kendo-grid > div > div > table > thead > tr > th:last-child { border-right-width: 0px; background: #f00;  } */
+
+div.row > div > kendo-grid > kendo-grid-list > div > div > table { width: 100%; max-width: 100%; margin-bottom: 1rem; background-color: transparent; border-collapse: collapse; }
+
+div.row > div > kendo-grid > kendo-grid-list > div > div > table * { color: #66615b;
+    font-size: .75rem;
+    font-weight: 300;
+    /* font-family: 'Montserrat', "Helvetica", Arial, sans-serif; */
+}
+
+div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > td {   padding: 15px 8px; vertical-align: middle; border-top: 1px solid #ccc;  }
+div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > td > div.form-check { position: relative; top: -12px;  }
+
+
+body > app-root > invoice-grid > div > div.page-header > div > div.col-lg-12.col-sm-8.mr-auto.ml-auto > kendo-grid > div.k-grid-header { padding: 0px -16px 0 0 !important;  }
