@@ -107,6 +107,9 @@
     <Content Include="src\app\shared\navbar\navbar.component.html" />
     <Content Include="src\app\shared\sidebar\sidebar.component.html" />
     <Content Include="src\app\thankyou\thankyou.component.html" />
+    <Content Include="src\app\users\user-details\user-details.component.html" />
+    <Content Include="src\app\users\user-list\user-list.component.html" />
+    <Content Include="src\app\users\users.component.html" />
     <Content Include="src\app\wallet\wallet.component.html" />
     <Content Include="src\assets\css\base.css" />
     <Content Include="src\assets\css\bootstrap.min.css" />
@@ -221,6 +224,9 @@
     <Content Include="src\assets\sass\easypay\_variables.scss" />
     <Content Include="src\app\invoice\variables.scss" />
     <Content Include="src\assets\sass\easypay\mixins\_grid.scss" />
+    <Content Include="src\app\users\user-details\user-details.component.scss" />
+    <Content Include="src\app\users\user-list\user-list.component.scss" />
+    <Content Include="src\app\users\users.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -318,6 +324,12 @@
     <TypeScriptCompile Include="src\app\shared\validation\forms.ts" />
     <TypeScriptCompile Include="src\app\thankyou\thankyou.component.spec.ts" />
     <TypeScriptCompile Include="src\app\thankyou\thankyou.component.ts" />
+    <TypeScriptCompile Include="src\app\users\user-details\user-details.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\users\user-details\user-details.component.ts" />
+    <TypeScriptCompile Include="src\app\users\user-list\user-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\users\user-list\user-list.component.ts" />
+    <TypeScriptCompile Include="src\app\users\users.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\users\users.component.ts" />
     <TypeScriptCompile Include="src\app\wallet\wallet.component.spec.ts" />
     <TypeScriptCompile Include="src\app\wallet\wallet.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />

@@ -26,9 +26,20 @@ export class LoginComponent implements OnInit {
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+        // prepopulate the email address, if present
+        if (localStorage.getItem('currentEmail') !== null && localStorage.getItem('currentEmail') === 'validfopsnosso@test.com') {
+            this.model = {username: localStorage.getItem('currentEmail')};
+            localStorage.removeItem('currentEmail');
+        }
     }
 
     login() {
+        // TODO: Remove. This is faked for demonstration purposes only.
+        if (this.model.username === 'ric.castagna@gmail.com' && this.model.password === 'asdf1234') {
+            this.router.navigate(['/invoice']);
+        }
+
         this.loading = true;
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(

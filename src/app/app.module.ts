@@ -8,12 +8,12 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ChartsModule } from 'ng2-charts';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { AppComponent } from './app.component';
-//Kendo UI Chart
+// Kendo UI Chart
 import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 // Import the ButtonsModule
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { SliderModule } from '@progress/kendo-angular-inputs';
-//Excel Export
+// Excel Export
 import { TextMaskModule } from '../../node_modules/angular2-text-mask';
 import { AuthGuardService, AuthService, GlobalService, ScopeGuardService, DataService, UserService, AuthenticationService, AlertService } from './services/index';
 import { CommonService } from './services/common.service';
@@ -39,15 +39,18 @@ import { Errors } from './pages/errors';
 import { CategoryDetailComponent } from './invoice/invoiceDetailRow.component';
 
 // Quick for email check
-import { BlockedssoComponent } from "./pages/blockedsso/blockedsso.component";
-import { FopsuserComponent } from "./pages/fopsuser/fopsuser.component";
-import { FwssoComponent } from "./pages/fwsso/fwsso.component";
-import { NfnssoComponent } from "./pages/nfnsso/nfnsso.component";
-import { NfwssoComponent } from "./pages/nfwsso/nfwsso.component";
+import { BlockedssoComponent } from './pages/blockedsso/blockedsso.component';
+import { FopsuserComponent } from './pages/fopsuser/fopsuser.component';
+import { FwssoComponent } from './pages/fwsso/fwsso.component';
+import { NfnssoComponent } from './pages/nfnsso/nfnsso.component';
+import { NfwssoComponent } from './pages/nfwsso/nfwsso.component';
+import { UsersComponent } from './users/users.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 // Testing
-//import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
+// import { SignupComponent } from './signup/signup.component';
+// import { LandingComponent } from './landing/landing.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -71,14 +74,17 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         SidebarComponent,
         NavBarComponent,
         //SignupComponent,
-        LandingComponent,
+        //LandingComponent,
         Errors,
         BlockedssoComponent,
         FopsuserComponent,
         FwssoComponent,
         NfnssoComponent,
         NfwssoComponent,
-        CategoryDetailComponent
+        CategoryDetailComponent,
+        UsersComponent,
+        UserListComponent,
+        UserDetailsComponent
     ],
     imports: [
         BrowserModule,

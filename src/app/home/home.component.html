@@ -1,28 +1,36 @@
 <div class="wrapper">
-  <div class="page-header" style="background: #fff;">    
+  <div class="page-header">    
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-8 mr-auto ml-auto">
-        <h2>Registration</h2>
-                <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" name="signupForm">
-                  <div class="form-group">
-                    <input type="email" email id="username" formControlName="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                   <span *ngIf="form.get('email').dirty || formSubmitclicked">
-                    <small class="error" *ngIf="form.get('email').hasError('isEmailUnique')">This email has been registered already</small>
-                    <small class="error" *ngIf="form.get('email').hasError('required')">The Email field is required.</small>
-                    <small class="error" *ngIf="form.get('email').hasError('pattern')">The Email field must contain a valid email address.</small>
-                  </span>
-                  </div>
-                  <div class="form-group text-right m-t-20">
-                  <div class="col-xs-12">
-                      <button class="btn btn-primary" type="submit">Submit<!--[routerLink]="['/invoice']"-->
-                      </button>
-                  </div>
-              </div>
-                  
-                </form>
+          <h2>Registration</h2>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div *ngIf="form.errors" class="alert alert-danger">
+              <div *ngIf="form.errors.internalEmail">In order to access the system with your @fnf.com email address, please contact the Helpdesk at (800) 555-1212.</div>
+              <div *ngIf="form.errors.blockedSso">Your account has been blocked from single sign-on. Please contact the Helpdesk at (800) 555-1212 for further assistance.</div>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="username"
+                formControlName="email"
+                maxlength="30"
+                class="form-control form-control-lg" 
+                placeholder="Enter your email address">
+              <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+                <div *ngIf="email.errors.required">Email is required.</div>
+                <div *ngIf="email.errors.email">Email address is not valid.</div>
+                <div *ngIf="email.errors.isUnique">Somebody beat you to that username.</div>
               </div>
             </div>
-          </div>
+            <div class="form-group text-right m-t-20">
+              <div class="col-xs-12">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
