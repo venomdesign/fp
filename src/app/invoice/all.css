@@ -12936,3 +12936,88 @@ div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > 
 
 
 body > app-root > invoice-grid > div > div.page-header > div > div.col-lg-12.col-sm-8.mr-auto.ml-auto > kendo-grid > div.k-grid-header { padding: 0px -16px 0 0 !important;  }
+
+
+
+
+/*Full structure of Kendo */
+/*div { color: #000; }
+    kendo-grid.k-widget.k-grid { color: #000; }
+        kendo-grid-toolbar.k-header.k-grid-toolbar { color: #000; }
+            div.action-buttons { color: #000; }
+        div.k-grid-header { color: #000; }
+            div.k-grid-header-wrap { color: #000; }
+                table { color: #000; }
+                    colgroup { color: #000; }
+                        col.k-hierarchy-col { color: #000; }
+                        col[style:width:50] { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col[style:with:120] { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                    thead { color: #000; }
+                        tr { color: #000; }
+                            th.k-heirarchy-cell.k-header { color: #000; }
+                            th.k-header { color: #000; }
+                                a.k-link { color: #000; }
+                            th.k-header { color: #000; }
+                                kendo-grid-filter-menu { color: #000; }
+                                    a.k-grid-filter { color: #000; }
+                                        span.k-icon.k-i-filter { color: #000; }
+                                a.k-link { color: #000; }
+                                    span.k-icon.[k-i-sort-asc-sm || k-i-sort-desc-sm] { color: #000; }
+        kendo-grid-list.k-grid-container { color: #000; }
+            div.k-grid-content.k-virtual-content { color: #000; }
+                div { color: #000; }
+                    table.k-grid-table { color: #000; }
+                        colgroup { color: #000; }
+                            col.k-hierarchy-col { color: #000; }
+                            col[style:width:50] { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col[style:with:120] { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                        tbody { color: #000; }
+                            tr.k-alt.k-master-row { color: #000; }
+                                td.k-hierarchy-cell { color: #000; }
+                                    a.k-icon.k-plus { color: #000; }
+                                td { color: #000; }
+                                    div.form-check { color: #000; }
+                                        label.form-check-label { color: #000; }
+                                            input.form-check-input.ng-untouched.ng-pristine.ng-valid { color: #000; }
+                                            span.form-check-sign [::before || ::after] { color: #000; }
+                                td*7 { color: #000; }
+                            tr.k-master-row { color: #000; }
+                div.k-height-container { color: #000; }
+                    div { color: #000; }
+        kendo-pager.k-pager-wrap.k-grid-pager.k-widget { color: #000; }
+            div.pager-prev-next { color: #000; }
+                kendo-pager-prev-buttons { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled.k-pager-first { color: #000; }
+                        span.k-icon.k-i-seek-w [::before] { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled { color: #000; }
+                        span.k-icon.k-i-arrow-w [::before] { color: #000; }
+                kendo-pager-numeric-buttons { color: #000; }
+                    ul.k-pager-numbers.k-reset { color: #000; }
+                        li.k-link.k-state-selected { color: #000; }
+                kendo-pager-next-buttons { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled { color: #000; }
+                        span.k-icon.k-i-arrow-e [::before] { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled.k-pager-last { color: #000; }
+                        span.k-icon.k-i-seek-e { color: #000; }
+            div.page-sizes { color: #000; }
+                kendo-pager-page-sizes.k-pager-sizes.k-label { color: #000; }
+                    select { color: #000; }
+                        option { color: #000; }
+            div.pager-info { color: #000; }
+                kendo-pager-info.k-pager-info.k-label { color: #000; }
+div.progress { color: #000; }
+    div.progress-bar.progress-bar-info*/
