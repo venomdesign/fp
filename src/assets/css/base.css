@@ -1291,3 +1291,91 @@ pre.prettyprint {
     position: relative;
     z-index: 2;
 }
+
+
+
+.login-input-container{margin:20px;border:1px solid #bfc0c6;border-radius:5px;padding:0}fieldset{display:block;-webkit-margin-start:2px;-webkit-margin-end:2px;-webkit-padding-before:.35em;-webkit-padding-start:.75em;-webkit-padding-end:.75em;-webkit-padding-after:.625em;min-width:-webkit-min-content;border-width:2px;border-style:groove;border-color:threedface;-o-border-image:initial;border-image:initial}.login-container, .login-input-item{position:relative}.login-container{box-sizing:border-box;text-align:center;padding-bottom:40px}.login-user-input-email{border-top-left-radius:5px;border-top-right-radius:5px}.login-user-input-password{border-top:1px solid #d5d6d9!important;border-bottom-left-radius:5px;border-bottom-right-radius:5px}.login-user-input{display:block;color:#282c3f;padding-right:40px;font-size:15px;width:100%;border:0;padding:15px}input{-webkit-appearance:textfield;background-color:#fff;-webkit-rtl-ordering:logical;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;cursor:auto;padding:1px;border-width:2px;border-style:inset;border-color:initial;-o-border-image:initial;border-image:initial;text-rendering:auto;color:initial;letter-spacing:normal;word-spacing:normal;text-transform:none;text-indent:0;text-shadow:none;display:inline-block;text-align:start;margin:0 0 0 0;font:11px system-ui}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}.login-login-button-container{padding:10px 20px;margin:0;border:0}.login-login-button{font-size:13px;font-weight:500;letter-spacing:2px;padding:15px;display:block;width:100%;border:0;text-transform:uppercase;border-radius:3px}.login-link{text-decoration:none}.login-right-links{float:right}.login-link-container{text-align:left;padding:20px}.login-create-account-link{margin-left:5px}a{background-color:transparent}.login-third-party-login{margin-top:30px}.login-button-info-text{margin-top:0;margin-bottom:20px}.login-info-text{color:#94969f;font-size:12px}.login-button-container{margin-top:10px;margin-bottom:40px}@media (min-width:360px){.login-facebook{margin-right:15px;margin-bottom:0}}@media (min-width:360px){.login-button{width:49%;display:inline-block}}.login-facebook{margin-bottom:0}.login-button{max-width:162px;padding-left:18%;position:relative;font-size:13px;font-weight:500;height:50px;border:1px solid #bfc0c6;background-color:#fff;border-radius:5px;text-align:left}[type=reset], [type=submit], button, html   [type=button]{-webkit-appearance:button}[type=button], [type=reset], [type=submit], button{cursor:pointer}button, select{text-transform:none}button, input, select, textarea{margin:0}button, input, select{overflow:visible}button, input, select, textarea{font:inherit}.header-sprite{background:url(http://res.cloudinary.com/mally/image/upload/v1489480940/148948096411965_w5wbjb.png) no-repeat 0 0;background-size:159px 48px;display:inline-block}.login-fb-logo, .login-gplus-logo{height:29px;position:absolute;left:15px}.login-fb-logo{background-position:-93px 0;width:28px;top:10px}.login-gplus-logo{background-position:-122px 0;width:23px;top:13px}.login-error-icon{border:2px solid #ff527b;padding:0 7px;display:inline-block;position:absolute;top:12px;right:10px;font-weight:500;border-radius:21px}.login-error-message{font-size:11px;margin-left:15px;text-align:left;margin-top:-9px;max-height:500px;-webkit-transition-property:all;transition-property:all;-webkit-transition-duration:.5s;transition-duration:.5s;-webkit-transition-timing-function:cubic-bezier(0,1,.5,1);transition-timing-function:cubic-bezier(0,1,.5,1)}p{display:block;-webkit-margin-before:1em;-webkit-margin-after:1em;-webkit-margin-start:0;-webkit-margin-end:0}.login-input-container:hover{border:1px solid #ff527b;box-shadow:0 2px 5px #ffb6df}
+
+
+
+/*Full structure of Kendo */
+/*div { color: #000; }
+    kendo-grid.k-widget.k-grid { color: #000; }
+        kendo-grid-toolbar.k-header.k-grid-toolbar { color: #000; }
+            div.action-buttons { color: #000; }
+        div.k-grid-header { color: #000; }
+            div.k-grid-header-wrap { color: #000; }
+                table { color: #000; }
+                    colgroup { color: #000; }
+                        col.k-hierarchy-col { color: #000; }
+                        col[style:width:50] { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col[style:with:120] { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                        col { color: #000; }
+                    thead { color: #000; }
+                        tr { color: #000; }
+                            th.k-heirarchy-cell.k-header { color: #000; }
+                            th.k-header { color: #000; }
+                                a.k-link { color: #000; }
+                            th.k-header { color: #000; }
+                                kendo-grid-filter-menu { color: #000; }
+                                    a.k-grid-filter { color: #000; }
+                                        span.k-icon.k-i-filter { color: #000; }
+                                a.k-link { color: #000; }
+                                    span.k-icon.[k-i-sort-asc-sm || k-i-sort-desc-sm] { color: #000; }
+        kendo-grid-list.k-grid-container { color: #000; }
+            div.k-grid-content.k-virtual-content { color: #000; }
+                div { color: #000; }
+                    table.k-grid-table { color: #000; }
+                        colgroup { color: #000; }
+                            col.k-hierarchy-col { color: #000; }
+                            col[style:width:50] { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col[style:with:120] { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                            col { color: #000; }
+                        tbody { color: #000; }
+                            tr.k-alt.k-master-row { color: #000; }
+                                td.k-hierarchy-cell { color: #000; }
+                                    a.k-icon.k-plus { color: #000; }
+                                td { color: #000; }
+                                    div.form-check { color: #000; }
+                                        label.form-check-label { color: #000; }
+                                            input.form-check-input.ng-untouched.ng-pristine.ng-valid { color: #000; }
+                                            span.form-check-sign [::before || ::after] { color: #000; }
+                                td*7 { color: #000; }
+                            tr.k-master-row { color: #000; }
+                div.k-height-container { color: #000; }
+                    div { color: #000; }
+        kendo-pager.k-pager-wrap.k-grid-pager.k-widget { color: #000; }
+            div.pager-prev-next { color: #000; }
+                kendo-pager-prev-buttons { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled.k-pager-first { color: #000; }
+                        span.k-icon.k-i-seek-w [::before] { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled { color: #000; }
+                        span.k-icon.k-i-arrow-w [::before] { color: #000; }
+                kendo-pager-numeric-buttons { color: #000; }
+                    ul.k-pager-numbers.k-reset { color: #000; }
+                        li.k-link.k-state-selected { color: #000; }
+                kendo-pager-next-buttons { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled { color: #000; }
+                        span.k-icon.k-i-arrow-e [::before] { color: #000; }
+                    a.k-link.k-pager-nav.k-state-disabled.k-pager-last { color: #000; }
+                        span.k-icon.k-i-seek-e { color: #000; }
+            div.page-sizes { color: #000; }
+                kendo-pager-page-sizes.k-pager-sizes.k-label { color: #000; }
+                    select { color: #000; }
+                        option { color: #000; }
+            div.pager-info { color: #000; }
+                kendo-pager-info.k-pager-info.k-label { color: #000; }
+div.progress { color: #000; }
+    div.progress-bar.progress-bar-info*/
