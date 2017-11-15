@@ -8,7 +8,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td
   font-weight: 300; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  margin: 30px 0 0; }
+  margin: 15px 0 15px; }
 
 h1, .h1 {
   font-size: 3.6em; }
@@ -16,36 +16,21 @@ h1, .h1 {
 h2, .h2 {
   font-size: 2.8em; }
 
-h3, .h3 {
-  font-size: 1.825em;
-  line-height: 1.4;
-  margin: 20px 0 0px; }
+h3, .h3 { font-size: 1.825em; line-height: 1.4; margin: 20px 0 0px; }
 
-h4, .h4 {
-  font-size: 1.6em;
-  line-height: 1.2em; }
+h4, .h4 { font-size: 1.6em; line-height: 1.2em; }
 
-h5, .h5 {
-  font-size: 1.35em;
-  line-height: 1.4em; }
+h5, .h5 { font-size: 1.35em; line-height: 1.4em; }
 
-h6, .h6 {
-  font-size: 0.9em;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1.5em; }
+h6, .h6 { font-size: 0.9em; font-weight: 600; text-transform: uppercase; line-height: 1.5em; }
 
-p {
-  font-size: 15px;
-  line-height: 1.5em;
-  margin-bottom: 5px; }
+p { font-size: 15px; line-height: 1.5em; margin-bottom: 5px; }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
   color: #9A9A9A;
   line-height: 1.5em; }
 
-h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
-  font-size: 60%; }
+h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small { font-size: 60%; }
 
 .title,
 .card-title,
@@ -53,8 +38,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 .footer-brand,
 .footer-big h5,
 .footer-big h4,
-.media .media-heading {
-  font-family: 'PT Sans', sans-serif; }
+.media .media-heading { font-family: 'PT Sans', sans-serif; }
   .title,
   .title a,
   .card-title,
@@ -347,9 +331,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   margin-left: -2px; }
 
 .btn-primary {
-  background-color: #51cbce;
-  border-color: #51cbce;
-  color: #fff;
+  background-color: #69c;
+  border-color: #69c;
+  color: #000;
   opacity: 1;
   filter: alpha(opacity=100); }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
@@ -1514,11 +1498,7 @@ textarea.form-control {
   .section-dark hr {
     border-color: rgba(255, 255, 255, 0.19); }
 
-.page-header .title,
-.page-header .info-title,
-.carousel-caption .title,
-.carousel-caption .info-title {
-  color: #fff; }
+
 
 [class*="features-"],
 [class*="team-"],
@@ -2189,7 +2169,7 @@ textarea.form-control {
   margin-top: 0; }
 
 .card-register label {
-  margin-top: 15px; }
+  margin: 15px 0 0 0; }
 
 .card-register .title {
   color: #B33C12;
@@ -6338,3 +6318,5 @@ License - nucleoapp.com/license/
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
+
+div.section .help-block { color:#f5593d; font-weight: bold; }

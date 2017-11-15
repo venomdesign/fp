@@ -1286,3 +1286,8 @@ pre.prettyprint {
 .card {
     margin-bottom: 1.35rem;
 }
+.registration label { margin-bottom: 0;  }
+div.section .help-block { color:#f5593d; font-weight: bold; }
+
+
+.noExport {  padding: 0; margin: 0; } 

@@ -84,7 +84,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         CategoryDetailComponent,
         UsersComponent,
         UserListComponent,
-        UserDetailsComponent
+        UserDetailsComponent,
+        HistoryComponent
     ],
     imports: [
         BrowserModule,

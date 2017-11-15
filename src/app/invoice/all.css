@@ -3669,8 +3669,7 @@ kendo-sortable,
     width: 5.2em;
     margin: 0 .25rem; height: calc(1.64844rem + 2px); border-radius: 5px; }
 
-
-div.page-sizes { position: absolute; top: -5px; left: 10px; }
+div.page-sizes { position: absolute; top: 0px; left: 10px; }
 
 div.page-sizes > kendo-pager-page-sizes:before {content: "Show"}
 
@@ -3743,10 +3742,10 @@ div.page-sizes > .k-pager-sizes.k-label:after {content: ""}
 .k-pager-numbers .k-state-selected:hover {
   border-width: 1px;
   border-style: solid;
-  background-color: #036;
-  border-color: #036;
+  background-color: #69c;
+  border-color: #69c;
   z-index: 2;
-  cursor: default; }
+  cursor: default; border-radius: 50%; }
   .k-pager-numbers .k-state-selected.k-link,
   .k-pager-numbers .k-state-selected:hover.k-link {
     color: #fff; }
@@ -3932,7 +3931,7 @@ div.page-sizes > .k-pager-sizes.k-label:after {content: ""}
     overflow: visible; }
     .k-grid .k-hierarchy-cell > .k-icon {
       font-size: 1rem;
-      color: #036;
+      color: #69c;
       padding: 0.75rem 0;
       width: 100%;
       height: 100%;
@@ -4158,11 +4157,12 @@ div.k-grid-footer {
   .k-grid-header .k-header > .k-link {
     font-family: 'PT Sans', "Helvetica", Arial, sans-serif;
     margin: -0.75rem -0.75rem;
-    padding: 0.75rem 0.75rem;
+    padding: 0.75rem 0.4rem;
     line-height: inherit;
     display: block;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    float: left; }
   .k-grid-header .k-header.k-filterable > .k-link {
     margin-right: calc( 2px + 1rem + 1.25em); }
   .k-grid-header .k-header > .k-link:focus {
@@ -12887,14 +12887,14 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 
 
 
-.runningTotal { display: table; width: 100%; height: 3rem; text-align: right; background-color: #ddd; box-shadow: none; overflow: hidden; font-size: 1rem; font-weight: bold; }
-.runningTotal div { display: table-cell; vertical-align: middle; height: 100%; padding-right: 200px; }
+.runningTotal { display: table; width: 100%; height: 3.1rem; text-align: right; background-color: #ddd; box-shadow: none; overflow: hidden; font-size: 1rem; font-weight: bold; }
 
-.runningTotal.total_top {  margin: 0px 0; }
-.runningTotal.total_bottom { margin: 25px 0;  }
 
-button.testMove { position: absolute; bottom: -70px; right: 10px; }
-button.upperView { position: absolute; top: 37px; right: 25px;  }
+/* .runningTotal.total_top {  margin: 0px 0; }
+.runningTotal.total_bottom { margin: 25px 0;  } */
+
+button.testMove { position: absolute; bottom: -70px; right: 25px; }
+button.upperView { position: absolute; top: 42px; right: 26px;  }
 
 .k-header.k-grid-toolbar { padding: 0; }
 
@@ -12919,15 +12919,25 @@ div.row > div > kendo-grid > kendo-grid-list > div > div > table td { color: #66
     font-family: 'PT Sans', "Helvetica", Arial, sans-serif;
 }
 
-div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > td {   padding: 15px 8px; vertical-align: middle; border-top: 1px solid #ccc;  }
+div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > td { padding: 15px 8px; vertical-align: middle; border-top: 1px solid #ccc;  }
+
+tr.k-detail-row td.k-detail-cell { padding: 0;  }
+
 div.row > div > kendo-grid > kendo-grid-list > div > div > table > tbody > tr > td > div.form-check { position: relative; top: -12px;  }
 
+tr.k-detail-row > td.k-detail-cell > div > invoice-details > kendo-grid > table { padding: 15px; margin-left: -15px;  }
+tr.k-detail-row > td.k-hierarchy-cell { background: #fff;  }
+tr.k-detail-row > td.k-detail-cell > div > invoice-details > kendo-grid > table > thead > tr > th { font-weight: bold;  }
+tr.k-detail-row > td.k-detail-cell > div > invoice-details > kendo-grid > table > tbody > tr > td, tr.k-detail-row.k-alt > td.k-detail-cell > div > invoice-details > kendo-grid > table > tbody > tr > td:hover { background: #fff;  }
 
-body > app-root > invoice-grid > div > div.page-header > div > div.col-lg-12.col-sm-8.mr-auto.ml-auto > kendo-grid > div.k-grid-header { padding: 0px -16px 0 0 !important;  }
+.k-detail-row td { border: 0;  }
+.k-detail-row td:hover { background-color: none;  }
 
-div.pager-prev-next { position: absolute; right: 15px; margin-top: 12px; }
+body > app-root > invoice-grid > div > div.page-header > div > div.col-lg-12.col-sm-8.mr-auto.ml-auto > kendo-grid > div.k-grid-header { padding: 0px -16px 0 0 !important; background: #f2f4f8;  }
 
-div.pager-info { margin: 10px 0 -10px; }
+/* div.pager-prev-next { position: absolute; right: 15px; margin-top: 12px; }
+
+div.pager-info { margin: 10px 0 -10px; } */
 /*Full structure of Kendo */
 /*div {  }
     kendo-grid.k-widget.k-grid {  }
@@ -13009,3 +13019,15 @@ div.pager-info { margin: 10px 0 -10px; }
                 kendo-pager-info.k-pager-info.k-label {  }
 div.progress {  }
     div.progress-bar.progress-bar-info*/
+
+
+#invoice_table { display: table; width: 100%; }
+
+#invoice_table #row  { display: table-row; }
+
+#invoice_table #left, #invoice_table #right, #invoice_table #middle { display: table-cell; vertical-align: middle; }
+#invoice_table #left, #invoice_table #right { padding: 0 10px;  }
+
+.control-label{
+    text-align: left; margin: 5px 15px 0 0;
+}

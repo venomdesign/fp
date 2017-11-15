@@ -55,7 +55,7 @@
 .carousel-caption{
     .title,
     .info-title{
-        color: $white-color;
+        color: $default-color;
     }
 }
 [class*="features-"],
@@ -90,3 +90,5 @@
 .section-login{
     min-height: 700px;
 }
+
+.help-block { color: $red-color; font-weight: $font-weight-bold }

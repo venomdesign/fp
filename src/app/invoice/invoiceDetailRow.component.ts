@@ -6,18 +6,10 @@ import { GridDataResult, GridComponent, PageChangeEvent } from '@progress/kendo-
 @Component({
     selector: 'invoice-details',
     template: `
-      <kendo-grid
-          [data]="details"
-          [pageSize]="25"
-          [skip]="skip"
-          [pageable]="true"
-          [scrollable]="'none'"
-          (pageChange)="pageChange($event)"
-        >
-      <kendo-grid-column field="TransactionDescription" title="Description of Transaction" width="480" [headerStyle]="{'font-size': '.6em'}" [style]="{'font-size': '.6em'}">
-      </kendo-grid-column>
-      <kendo-grid-column field="ChargeAmount" title="Charge" format="{0:c}" [headerStyle]="{'font-size': '.6em'}" [style]="{'font-size': '.6em'}">
-      </kendo-grid-column>
+      <kendo-grid [data]="details" [pageSize]="25" [skip]="skip" [pageable]="true" [scrollable]="'none'" (pageChange)="pageChange($event)">
+        <kendo-grid-column field="TransactionDescription" title="Description of Transaction" width="480"></kendo-grid-column>
+        <kendo-grid-column field="ChargeAmount" title="Charge" format="{0:c}"></kendo-grid-column>
+        <ng-template kendoPagerTemplate></ng-template>
       </kendo-grid>
   `
 })

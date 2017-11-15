@@ -38,7 +38,7 @@ $default-color:              #66615B !default;
 $default-bg:                 #66615B !default;
 $default-states-color:       #403D39 !default;
 
-$primary-color:              #51cbce !default;
+$primary-color:              #69c !default;
 $primary-states-color:       darken($primary-color, 10%) !default;
 
 $success-color:              #6bd098 !default;
@@ -62,7 +62,7 @@ $brown-color:                #dcb285 !default;
 $brown-states-color:         darken($brown-color, 8%) !default;
 
 $blue-color:				#036 !default;
-
+$red-color: 				#f5593d !default;
 
 
 /*      light colors - used for select dropdown         */
@@ -102,7 +102,7 @@ $padding-dropdown-vertical:     10px !default;
 $padding-dropdown-horizontal:   15px !default;
 
 $margin-large-vertical:        30px !default;
-$margin-base-vertical:         15px !default;
+$margin-base-vertical:         30px !default;
 
 // border radius for buttons
 $border-radius-none:             0px !default;

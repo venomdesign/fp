@@ -19,6 +19,7 @@ import { FopsuserComponent } from './pages/fopsuser/fopsuser.component';
 import { FwssoComponent } from './pages/fwsso/fwsso.component';
 import { NfnssoComponent } from './pages/nfnsso/nfnsso.component';
 import { NfwssoComponent } from './pages/nfwsso/nfwsso.component';
+import { HistoryComponent } from "./history/history.component";
 
 const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
     { path: 'password', component: PasswordComponent },
     { path: 'sandbox', component: SandboxComponent },
     { path: 'register', component: RegistrationComponent },
+    { path: 'history', component: HistoryComponent },
     // { path: 'registration', component: RegistrationComponent },
     { path: 'invoice', component: InvoiceComponent },
     { path: 'thankyou', component: ThankyouComponent },

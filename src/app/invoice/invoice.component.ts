@@ -13,10 +13,9 @@ declare var $ :any;
     template: `
     <div class="wrapper">
     <section class="card no-transition mr-auto ml-auto" style="width: 80%;">
-<div class="card-body">
+      <div class="card-body">
         <div class="page-header">    
-            <div class="row">
-                
+            <div class="row">                
                 <div class="col-lg-12 col-sm-12">
         <kendo-grid
           [data]="gridView"
@@ -26,22 +25,41 @@ declare var $ :any;
           (dataStateChange)="dataStateChange($event)"
           [sortable]="{ allowUnsort: true, mode: 'multiple' }"
           [sort]="sort"
-          (sortChange)="sortChange($event)"
+          (sortChange)="sortChange($event)" 
           filterable="menu"
           [pageable]="true"
           (pageChange)="pageChange($event)">
           <kendo-grid-messages pagerItemsPerPage="Invoices" pagerItems="Invoices"></kendo-grid-messages>
             <ng-template kendoGridToolbarTemplate>
-                <div class="action-buttons">
-                    <button class="btn btn-primary upperView" (click)='PaySelected();' data-toggle="modal" data-target="#myModal">View Selected</button>
-                   <div class="export-btns"><button kendoGridPDFCommand class="btn btn-outline-danger pull-right"><i class='fa fa-file-pdf-o'></i>&nbsp;Export to PDF</button>
-                    <button kendoGridExcelCommand class="btn btn-outline-success pull-right"><i class='fa fa-file-excel-o'></i>&nbsp;Export to Excel</button></div>
-                    <button class="btn btn-primary testMove" (click)='PaySelected();' data-toggle="modal" data-target="#myModal">View Selected</button>
+                <div id="invoice_table">
+                    <div id="row">
+                        <div id="left"></div>
+                        <div id="middle"></div>
+                        <div id="right" class="pull-right text-right" style="height: 40px;">
+                            <span class="control-label pull-left" for="CreditCard">Export Format:</span>
+                            <button kendoGridPDFCommand class="btn btn-neutral" title="Export to PDF"><i class='fa fa-file-pdf-o' style="font-size: 1.25rem"></i></button>
+                            <button kendoGridExcelCommand class="btn btn-neutral" title="Export to Excel"><i class='fa fa-file-excel-o' style="font-size: 1.25rem"></i></button>
+                        </div>
+                    </div>
+                    <div id="row" class="runningTotal">
+                        <div id="left" class="text-right text-nowrap" style="width: 350px; max-width: 350px;">
+                            <span class="control-label pull-left" for="CreditCard">CC#:</span>
+                            <select class="form-control" name="CreditCard" style="width: 250px;">
+                                <option value="** 1234">My BofA Credit Card - ** 1234</option>
+                                <option value="** 4321">My Chase Checking Card - ** 4321</option>
+                                <option value="** 4334">Tom's Gold AmEx Card - ** 4334</option>
+                            </select>
+                        </div>
+
+  
+                        <div id="middle">
+                            
+                        </div>
+                        <div id="right" class="text-right mw-100">
+                            Invoices: {{selCount}}&nbsp;&nbsp;Total Payment: $ {{selTotal}} <button class="btn btn-round" (click)='PaySelected();' data-toggle="modal" data-target="#myModal" style="margin-left: 15px;">Pay Selected</button>
+                        </div>
+                    </div>
                 </div>
-                <!--<div class="action-buttons">
-                  <div class="pull-right">Invoices Selected: {{selCount}}&nbsp;&nbsp;Total: $ {{selTotal}}</div>
-                </div>-->
-            <div class="runningTotal text-right total_top"><div>Invoices: {{selCount}}&nbsp;&nbsp;Total Payment: $ {{selTotal}}</div></div>
             </ng-template>
 
             <kendo-grid-column field="ToPay" title="Pay" width="50" [filterable]="false">
@@ -72,12 +90,19 @@ declare var $ :any;
             <div class="noExport" *kendoGridDetailTemplate="let dataItem">
               <invoice-details [details]="dataItem.Charges"></invoice-details>
             </div>            
+            
             <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
-               <div class="pager-prev-next"><kendo-pager-prev-buttons></kendo-pager-prev-buttons>
-               <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
-               <kendo-pager-next-buttons></kendo-pager-next-buttons></div>
-               <div class="page-sizes"><kendo-pager-page-sizes [pageSizes]="[5, 10, 25, 50]" title="Invoices"></kendo-pager-page-sizes></div>
-               <div class="pager-info"><kendo-pager-info></kendo-pager-info></div>
+                <div id="invoice_table">
+                    <div id="row">
+                        <div id="left" class="pull-left"><kendo-pager-info></kendo-pager-info></div>
+                        <div id="middle"><div class="page-sizes"><kendo-pager-page-sizes [pageSizes]="[5, 10, 25, 50]" title="Invoices"></kendo-pager-page-sizes></div></div>
+                        <div id="right" class="pull-right">
+                            <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+                            <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+                            <kendo-pager-next-buttons></kendo-pager-next-buttons>
+                        </div>
+                    </div>
+                </div>
             </ng-template>
 
             <kendo-grid-pdf fileName="Invoices.pdf" [allPages]="true" paperSize="Letter" [repeatHeaders]="true" [landscape]="true">
@@ -112,11 +137,14 @@ declare var $ :any;
         
        
         </div>
-        
-        <div class="runningTotal text-right pull-right total_bottom">
-            <div>Invoices: {{selCount}}&nbsp;&nbsp;Total Payment: $ {{selTotal}}</div>
-        </div>
 
+        <div id="invoice_table" class="runningTotal total_bottom mw-100">
+            <div id="row">
+                <div id="right" class="text-right" style="padding-right: 25px;">
+                    Invoices: {{selCount}}&nbsp;&nbsp;Total Payment: $ {{selTotal}} <button class="btn btn-round" (click)='PaySelected();' data-toggle="modal" data-target="#myModal" style="margin-left: 15px;">Pay Selected</button>
+                </div>
+            </div>
+        </div>
         </div>
         </div>
         </div>
@@ -129,7 +157,11 @@ declare var $ :any;
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">Lorem</div>
+            <div class="modal-body">
+              <div *ngFor="let invoice of paying" class="row">
+                <div>{{invoice.OrderNumber}}&nbsp;&nbsp;&nbsp;&nbsp;{{invoice.InvoiceDate}}&nbsp;&nbsp;&nbsp;&nbsp;{{invoice.CurrentBalance}}</div>
+              </div>
+            </div>
             <div class="modal-footer">
                 <div class="left-side">
                     <button type="button" class="btn btn-danger btn-link">Cancel</button><!-- data-dismiss="modal" (click)="toggleTitle()"-->
@@ -142,7 +174,6 @@ declare var $ :any;
               </div>
           </div>
         </div>
-
     `
 })
 
@@ -153,7 +184,7 @@ export class InvoiceComponent implements AfterViewChecked {
     public sort: SortDescriptor[] = [];
     public gridView: GridDataResult;
     public invoices: any[] = invoices;
-    private paying: any[] = [];
+    public paying: any[] = [];
     public selCount: number = 0;
     public selTotal: number = 0;
 
@@ -183,17 +214,13 @@ export class InvoiceComponent implements AfterViewChecked {
             $('tr.k-master-row td').addClass("easyPay_cell");
             $('table.k-grid-table').removeClass("k-grid-table").addClass("table table-hover nowrap dataTable dtr-inline");
 
-
-
-            $(":checkbox").on('change', function() {
+            /*$(":checkbox").on('change', function() {
                 var total = [];
                 $('.form-check-input:checked').each(function(){  //find the checked checkboxes and loop through them
                     total.push($(".easyPay_cell .easyPay_balance").html()); //add the values to the array
-
-                    //alert(parseInt($(".easyPay_cell .easyPay_balance").html()));
                 });        
                 $('#field_results').val(total);  //join the array
-            });
+            });*/
         });
     }
 
@@ -235,7 +262,7 @@ export class InvoiceComponent implements AfterViewChecked {
           this.paying.push(item);
           //Remove them from the Invoices list so they can't be paid again.
           var idx = this.invoices.indexOf(item);
-          this.invoices.splice(idx, 1);
+          //this.invoices.splice(idx, 1);
         }
       }
 
